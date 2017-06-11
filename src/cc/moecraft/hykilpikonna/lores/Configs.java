@@ -36,6 +36,7 @@ public class Configs
             else
             {
                 loglogger.Debug("[加载]配置已是最新的");
+                loglogger.setDebug(config.getBoolean("Debug"));
             }
         }
     }

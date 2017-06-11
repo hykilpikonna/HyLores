@@ -51,4 +51,6 @@ public class HyLores extends JavaPlugin implements Listener
     {
         return instance;
     }
+
+
 }
