@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.inventivetalent.particle.ParticleEffect;
 
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
@@ -45,10 +46,15 @@ public class AttackEffectListener implements Listener
                     double yCenter = location.getY() + 1;
                     double zCenter = location.getZ() + 0.5;
                     loglogger.Debug(String.format("[事件监听器][AEL]已获取坐标中心, [%s,%s,%s]", xCenter, yCenter, zCenter));
-                    xCenter = xCenter + (ThreadLocalRandom.current().nextInt(-500, 500) / 1000);
-                    yCenter = yCenter + (ThreadLocalRandom.current().nextInt(-1000, 1000) / 1000);
-                    zCenter = zCenter + (ThreadLocalRandom.current().nextInt(-500, 500) / 1000);
-                    loglogger.Debug(String.format("[事件监听器][AEL]坐标已随机, [%s,%s,%s]", xCenter, yCenter, zCenter));
+                    Random random = new Random();
+                    double xRandom = (random.nextInt(1000) - 500) / 1000;
+                    double yRandom = (random.nextInt(1500) - 750) / 1000;
+                    double zRandom = (random.nextInt(1000) - 500) / 1000;
+                    loglogger.Debug(String.format("[事件监听器][AEL]随机已生成, [%s,%s,%s]", xRandom, yRandom, zRandom));
+                    xCenter = xCenter + xRandom;
+                    yCenter = yCenter + yRandom;
+                    zCenter = zCenter + zRandom;
+                    loglogger.Debug(String.format("[事件监听器][AEL]随机坐标已保存, [%s,%s,%s]", xCenter, yCenter, zCenter));
                     ParticleEffect.HEART.send(Bukkit.getOnlinePlayers(), xCenter, yCenter, zCenter, 0, 0, 0, 10, (int) Math.round(event.getDamage()), 100);
                 }
             }
