@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="HyLores">
+    <output-path>$PROJECT_DIR$/out/artifacts/HyLores</output-path>
+    <root id="archive" name="HyLores.jar">
+      <element id="module-output" name="HyLores" />
+      <element id="library" level="project" name="ParticleAPI_v2.1.1" />
+    </root>
+  </artifact>
+</component>
