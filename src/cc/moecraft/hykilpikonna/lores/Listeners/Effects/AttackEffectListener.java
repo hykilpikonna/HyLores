@@ -1,10 +1,7 @@
 package cc.moecraft.hykilpikonna.lores.Listeners.Effects;
 
-import com.sun.java.swing.plaf.windows.TMSchema;
 import org.bukkit.Bukkit;
-import org.bukkit.Effect;
 import org.bukkit.Location;
-import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
