@@ -1,5 +1,6 @@
 package cc.moecraft.hykilpikonna.lores.Listeners.Effects;
 
+import com.sun.java.swing.plaf.windows.TMSchema;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Location;
@@ -41,7 +42,7 @@ public class AttackEffectListener implements Listener
                 Location location = event.getEntity().getLocation();
                 loglogger.Debug("[事件监听器][AEL]已发送");
                 ParticleEffect.HEART.send(Bukkit.getOnlinePlayers(), location.getX(), location.getY(), location.getZ(), 0.0D, 0.0D, 0.0D, 1, (int) Math.round(event.getDamage()), 2);
-                /*for (int i = 0; i < event.getDamage(); i++)
+                for (int i = 0; i < event.getDamage(); i++)
                 {
                     double xCenter = location.getX() + 0.5;
                     double yCenter = location.getY() + 1;
@@ -51,13 +52,8 @@ public class AttackEffectListener implements Listener
                     yCenter = yCenter + (ThreadLocalRandom.current().nextInt(-1000, 1000) / 1000);
                     zCenter = zCenter + (ThreadLocalRandom.current().nextInt(-500, 500) / 1000);
                     loglogger.Debug(String.format("[事件监听器][AEL]坐标已随机, [%s,%s,%s]", xCenter, yCenter, zCenter));
-                    Location randomLocation = event.getEntity().getLocation();
-                    randomLocation.setX(xCenter);
-                    randomLocation.setY(yCenter);
-                    randomLocation.setZ(zCenter);
-                    loglogger.Debug("[事件监听器][AEL]坐标已存入坐标变量");
-                    randomLocation.getWorld().playEffect(randomLocation, Effect.HEART, );
-                }*/
+                    ParticleEffect.HEART.send(Bukkit.getOnlinePlayers(), xCenter, yCenter, zCenter, 0, 0, 0, 10, (int) Math.round(event.getDamage()), 100);
+                }
             }
         }
         else
