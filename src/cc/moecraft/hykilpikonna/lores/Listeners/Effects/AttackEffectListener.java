@@ -47,9 +47,9 @@ public class AttackEffectListener implements Listener
                     double zCenter = location.getZ() + 0.5;
                     loglogger.Debug(String.format("[事件监听器][AEL]已获取坐标中心, [%s,%s,%s]", xCenter, yCenter, zCenter));
                     Random random = new Random();
-                    double xRandom = (random.nextInt(1000) - 500) / 1000;
-                    double yRandom = (random.nextInt(1500) - 750) / 1000;
-                    double zRandom = (random.nextInt(1000) - 500) / 1000;
+                    double xRandom = ((double) random.nextInt(1000) - 500.0) / 1000.0;
+                    double yRandom = ((double) random.nextInt(1500) - 750.0) / 1000.0;
+                    double zRandom = ((double) random.nextInt(1000) - 500.0) / 1000.0;
                     loglogger.Debug(String.format("[事件监听器][AEL]随机已生成, [%s,%s,%s]", xRandom, yRandom, zRandom));
                     xCenter = xCenter + xRandom;
                     yCenter = yCenter + yRandom;
