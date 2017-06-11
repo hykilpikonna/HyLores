@@ -1,0 +1,8 @@
+name: "HyLores"
+version: 0.0.2
+description: "Hykilpikonna's lore items"
+author: Hykilpikonna
+main: cc.moecraft.hykilpikonna.lores.HyLores
+commands:
+    hyl:
+        description: The command.
