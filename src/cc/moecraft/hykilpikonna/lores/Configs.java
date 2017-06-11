@@ -1,7 +1,9 @@
 package cc.moecraft.hykilpikonna.lores;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.Configuration;
 
+import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
 
 /**
@@ -19,7 +21,51 @@ public class Configs
         config = HyLores.getInstance().getConfig();
         if (config.getBoolean("DefaultConfig"))
         {
-
+            loglogger.Debug("[加载]检查到配置是新的, 正在生成配置");
+            writeConfig();
         }
+        else
+        {
+            if (config.getString("ConfigVersion").equals(Bukkit.getPluginManager().getPlugin("HyLores").getDescription().getVersion()))
+            {
+                loglogger.Debug("[加载]检查到配置不是最新的, 正在生成配置");
+                writeConfig();
+            }
+            else
+            {
+                loglogger.Debug("[加载]配置已是最新的");
+            }
+        }
+    }
+
+    private static void writeConfig()
+    {
+        //把默认配置设成否
+        config.set("DefaultConfig", false);
+
+        //是否Debug
+        config.addDefault("Debug", true);
+
+        //配置版本
+        config.set("ConfigVersion", Bukkit.getPluginManager().getPlugin("HyLores").getDescription().getVersion());
+
+        //心心特效
+        config.addDefault("Features.AttackEffect.Enable", true);
+        config.addDefault("Features.AttackEffect.Amount.Multiplier", 1);
+        config.addDefault("Features.AttackEffect.Amount.Maximum", 50);
+        config.addDefault("Features.AttackEffect.Amount.Minimum", 0);
+        config.addDefault("Features.AttackEffect.Centering.OffsetX", 0.5);
+        config.addDefault("Features.AttackEffect.Centering.OffsetY", 1);
+        config.addDefault("Features.AttackEffect.Centering.OffsetZ", 0.5);
+        config.addDefault("Features.AttackEffect.Randomizing.X.Range", 100);
+        config.addDefault("Features.AttackEffect.Randomizing.X.Add", -50);
+        config.addDefault("Features.AttackEffect.Randomizing.X.Divide", 100);
+        config.addDefault("Features.AttackEffect.Randomizing.Y.Range", 150);
+        config.addDefault("Features.AttackEffect.Randomizing.Y.Add", -75);
+        config.addDefault("Features.AttackEffect.Randomizing.Y.Divide", 100);
+        config.addDefault("Features.AttackEffect.Randomizing.Z.Range", 100);
+        config.addDefault("Features.AttackEffect.Randomizing.Z.Add", -50);
+        config.addDefault("Features.AttackEffect.Randomizing.Z.Divide", 100);
+        config.addDefault("Features.AttackEffect.VisibleRange", 100);
     }
 }
