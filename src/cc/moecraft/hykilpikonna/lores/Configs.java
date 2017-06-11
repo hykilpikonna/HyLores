@@ -3,6 +3,8 @@ package cc.moecraft.hykilpikonna.lores;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.Configuration;
 
+import java.util.Objects;
+
 import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
 
@@ -48,6 +50,10 @@ public class Configs
 
         //配置版本
         config.set("ConfigVersion", Bukkit.getPluginManager().getPlugin("HyLores").getDescription().getVersion());
+
+        //API版本
+        config.addDefault("API.UsePlayEffectAPIInsteadOfParticleLib", Bukkit.getVersion().contains("1_7"));
+        loglogger.Debug(String.format("[加载]当前服务器版本为%s", Bukkit.getVersion()));
 
         //心心特效
         config.addDefault("Features.AttackEffect.Enable", true);

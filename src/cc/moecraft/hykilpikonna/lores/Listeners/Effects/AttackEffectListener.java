@@ -1,7 +1,9 @@
 package cc.moecraft.hykilpikonna.lores.Listeners.Effects;
 
 import cc.moecraft.hykilpikonna.lores.HyLores;
+import me.fromgate.playeffect.VisualEffect;
 import org.bukkit.Bukkit;
+import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -14,6 +16,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
+import static me.fromgate.playeffect.PlayEffect.play;
 
 /**
  * 此类由 Hykilpikonna 在 2017/06/10 创建!
@@ -48,7 +51,7 @@ public class AttackEffectListener implements Listener
                         if (amount >= getInstance().getConfig().getInt("Features.AttackEffect.Amount.Minimum"))
                         {
                             amount = amount * getInstance().getConfig().getInt("Features.AttackEffect.Amount.Multiplier");
-                            for (int i = 0; i < event.getDamage(); i++)
+                            for (int i = 0; i < amount; i++)
                             {
                                 double xCenter = location.getX() + getInstance().getConfig().getInt("Features.AttackEffect.Centering.OffsetX");
                                 double yCenter = location.getY() + getInstance().getConfig().getInt("Features.AttackEffect.Centering.OffsetY");
@@ -63,8 +66,20 @@ public class AttackEffectListener implements Listener
                                 yCenter = yCenter + yRandom;
                                 zCenter = zCenter + zRandom;
                                 loglogger.Debug(String.format("[事件监听器][AEL]随机坐标已保存, [%s,%s,%s]", xCenter, yCenter, zCenter));
-                                ParticleEffect.HEART.send(Bukkit.getOnlinePlayers(), xCenter, yCenter, zCenter, 0, 0, 0, 10, amount, getInstance().getConfig().getInt("Features.AttackEffect.VisibleRange"));
-                                loglogger.Debug("[事件监听器][AEL]已发送");
+                                if (getInstance().getConfig().getBoolean("API.UsePlayEffectAPIInsteadOfParticleLib"))
+                                {
+                                    Location tempL = event.getEntity().getLocation();
+                                    tempL.setX(xCenter);
+                                    tempL.setY(yCenter);
+                                    tempL.setZ(zCenter);
+                                    play(VisualEffect.HEART, tempL, "num:1");
+                                    loglogger.Debug("[事件监听器][AEL]已通过PlayEffectAPI发送");
+                                }
+                                else
+                                {
+                                    ParticleEffect.HEART.send(Bukkit.getOnlinePlayers(), xCenter, yCenter, zCenter, 0, 0, 0, 10, 1, getInstance().getConfig().getInt("Features.AttackEffect.VisibleRange"));
+                                    loglogger.Debug("[事件监听器][AEL]已通过ParticleLIB发送");
+                                }
                             }
                         }
                         else
