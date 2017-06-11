@@ -12,10 +12,11 @@ import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
  */
 public class Configs
 {
-    static Configuration config = HyLores.getInstance().getConfig();
+    static Configuration config = null;
     static void checkConfig()
     {
         loglogger.Debug("[加载]正在检查配置");
+        config = HyLores.getInstance().getConfig();
         if (config.getBoolean("DefaultConfig"))
         {
 

@@ -26,10 +26,11 @@ public class HyLores extends JavaPlugin implements Listener
     public void onEnable()
     {
         loglogger.log("[加载]此插件正在加载......");
+        instance = this;
         getConfig().options().copyDefaults(true);
         saveConfig();
         setup();
-        instance = this;
+        
         Bukkit.getPluginManager().registerEvents(this, this);
         loglogger.log("[加载]此插件加载完成!");
     }
