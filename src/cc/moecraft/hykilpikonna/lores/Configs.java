@@ -25,6 +25,7 @@ public class Configs
         {
             loglogger.Debug("[加载]检查到配置是新的, 正在生成配置");
             writeConfig();
+            loglogger.setDebug(config.getBoolean("Debug"));
         }
         else
         {
@@ -32,6 +33,7 @@ public class Configs
             {
                 loglogger.Debug("[加载]检查到配置不是最新的, 正在生成配置");
                 writeConfig();
+                loglogger.setDebug(config.getBoolean("Debug"));
             }
             else
             {
@@ -74,5 +76,8 @@ public class Configs
         config.addDefault("Features.AttackEffect.Randomizing.Z.Add", -50);
         config.addDefault("Features.AttackEffect.Randomizing.Z.Divide", 100);
         config.addDefault("Features.AttackEffect.VisibleRange", 100);
+
+        //保存配置
+        getInstance().saveConfig();
     }
 }
