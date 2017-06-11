@@ -14,10 +14,10 @@ import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
  */
 public class Setup
 {
+    public static final AttackEffectListener ATTACK_EFFECT_LISTENER = new AttackEffectListener();
     public static void setup()
     {
         loglogger.Debug("[加载]正在运行Setup");
         checkConfig();
-        AttackEffectListener attackEffectListener = new AttackEffectListener();
     }
 }
