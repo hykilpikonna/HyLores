@@ -6,7 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10f1cc0b-c60f-4408-81fa-94c9b3c6ca06" name="Default" comment="" />
+    <list default="true" id="10f1cc0b-c60f-4408-81fa-94c9b3c6ca06" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/HyLores.java" afterPath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/HyLores.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugin.yml" afterPath="$PROJECT_DIR$/src/plugin.yml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,13 +28,13 @@
         <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/HyLores.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="344">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1103#1104#0" expanded="true" />
-                <element signature="e#1143#1144#0" expanded="true" />
-                <element signature="e#1236#1237#0" expanded="true" />
-                <element signature="e#1267#1268#0" expanded="true" />
+                <element signature="e#1124#1125#0" expanded="true" />
+                <element signature="e#1164#1165#0" expanded="true" />
+                <element signature="e#1257#1258#0" expanded="true" />
+                <element signature="e#1288#1289#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plugin.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="plugin.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/plugin.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
-              <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+              <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -72,8 +75,8 @@
       <file leaf-file-name="Setup.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Setup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="97" lean-forward="false" selection-start-line="16" selection-start-column="97" selection-end-line="16" selection-end-column="97" />
+            <state relative-caret-position="380">
+              <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,7 +84,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Configs.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Configs.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Configs.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
@@ -126,11 +129,11 @@
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Listeners/Items/BowsListener.java" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Listeners/Misc/PlayerListEventListener.java" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/plugin.yml" />
-        <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/HyLores.java" />
-        <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Setup.java" />
-        <option value="$PROJECT_DIR$/src/plugin.yml" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Listeners/Effects/AttackEffectListener.java" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Configs.java" />
+        <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Setup.java" />
+        <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/HyLores.java" />
+        <option value="$PROJECT_DIR$/src/plugin.yml" />
       </list>
     </option>
   </component>
@@ -655,30 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/HyLores.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1103#1104#0" expanded="true" />
-            <element signature="e#1143#1144#0" expanded="true" />
-            <element signature="e#1236#1237#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Setup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="97" lean-forward="false" selection-start-line="16" selection-start-column="97" selection-end-line="16" selection-end-column="97" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -687,11 +666,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugin.yml">
+    <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Configs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="230">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -705,13 +686,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Configs.java">
+    <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Setup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state relative-caret-position="380">
+          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/HyLores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1124#1125#0" expanded="true" />
+            <element signature="e#1164#1165#0" expanded="true" />
+            <element signature="e#1257#1258#0" expanded="true" />
+            <element signature="e#1288#1289#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

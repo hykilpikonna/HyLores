@@ -30,7 +30,7 @@ public class HyLores extends JavaPlugin implements Listener
         getConfig().options().copyDefaults(true);
         saveConfig();
         setup();
-
+        saveConfig();
         Bukkit.getPluginManager().registerEvents(this, this);
         loglogger.log("[加载]此插件加载完成!");
     }
