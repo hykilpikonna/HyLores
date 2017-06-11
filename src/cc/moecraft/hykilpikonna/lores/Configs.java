@@ -28,7 +28,7 @@ public class Configs
         }
         else
         {
-            if (config.getString("ConfigVersion").equals(Bukkit.getPluginManager().getPlugin("HyLores").getDescription().getVersion()))
+            if (!config.getString("ConfigVersion").equals(Bukkit.getPluginManager().getPlugin("HyLores").getDescription().getVersion()))
             {
                 loglogger.Debug("[加载]检查到配置不是最新的, 正在生成配置");
                 writeConfig();
