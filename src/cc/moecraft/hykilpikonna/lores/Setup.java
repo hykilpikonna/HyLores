@@ -1,12 +1,9 @@
 package cc.moecraft.hykilpikonna.lores;
 
 import cc.moecraft.hykilpikonna.lores.Listeners.Effects.AttackEffectListener;
-import jdk.nashorn.internal.runtime.Debug;
-import me.fromgate.playeffect.PlayEffect;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
-
 import static cc.moecraft.hykilpikonna.lores.Configs.checkConfig;
 import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
@@ -24,17 +21,32 @@ public class Setup
     public static void setup()
     {
         loglogger.Debug("[加载]正在运行Setup");
-        if (!checkPlayEffect() && getInstance().getConfig().getBoolean("API.UsePlayEffectAPIInsteadOfParticleLib"))
+        if (getInstance().getConfig().getBoolean("API.UsePlayEffectAPIInsteadOfParticleLib"))
         {
-            loglogger.log(ChatColor.RED + "[加载]未检测到PlayEffectAPI, 插件自动退出");
-            unload(Bukkit.getPluginManager().getPlugin("HyLores"));
+            if (!checkPlayEffect())
+            {
+                loglogger.log(ChatColor.RED + "[加载]未检测到PlayEffectAPI, 插件自动退出");
+                unload(Bukkit.getPluginManager().getPlugin("HyLores"));
+            }
+        }
+        else
+        {
+            if (checkParticleLIB())
+            {
+                loglogger.log(ChatColor.RED + "[加载]未检测到ParticleLibAPI, 插件自动退出");
+                unload(Bukkit.getPluginManager().getPlugin("HyLores"));
+            }
         }
         checkConfig();
     }
 
     private static boolean checkPlayEffect()
     {
-        Plugin vplg = Bukkit.getServer().getPluginManager().getPlugin("PlayEffect");
-        return  ((vplg != null) && (vplg instanceof PlayEffect));
+        return  Bukkit.getServer().getPluginManager().getPlugin("PlayEffect") != null;
+    }
+
+    private static boolean checkParticleLIB()
+    {
+        return Bukkit.getServer().getPluginManager().getPlugin("ParticleLIB") != null;
     }
 }
