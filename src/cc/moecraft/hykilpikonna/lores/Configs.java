@@ -87,7 +87,7 @@ public class Configs
         config.addDefault("Permissions.Command.lore.insert.Node", "hylores.command.lore.insert");
 
         //消息发送
-        config.addDefault("Messaging.Prefix", convertColorCode("&7&l[&6&lHy&3&lLores&7&l]&r"));
+        config.addDefault("Messaging.Prefix", convertColorCode("&7&l[&6&lHy&3&lLores&7&l] &r"));
 
         //心心特效
         config.addDefault("Features.AttackEffect.Enable", true);
@@ -109,7 +109,7 @@ public class Configs
         config.addDefault("Features.AttackEffect.VisibleRange", 100);
 
         //Lore
-        config.addDefault("Lore.Prefix", convertColorCode("&7&l[&6&lHy&3&lLores&7&l]&r"));
+        config.addDefault("Lore.Prefix", convertColorCode("&7&l[&6&lHy&3&lLores&7&l] &r"));
 
         //保存配置
         getInstance().saveConfig();

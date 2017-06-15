@@ -151,10 +151,10 @@ public class HyLores extends JavaPlugin implements Listener
                                 {
                                     if (isNumeric(args[2]))
                                     {
-                                        int line = Integer.parseInt(args[2]);
+                                        int line = Integer.parseInt(args[2]) - 1;
                                         ItemStack itemInHand = getAllVersionItemInHand(player);
                                         setAllVersionItemInHand(player, removeLore(itemInHand, line));
-                                        sendMessage(player, ChatColor.GREEN + String.format("已在主手物品Lore内删除第%s行", line));
+                                        sendMessage(player, ChatColor.GREEN + String.format("已在主手物品Lore内删除第%s行", line + 1));
                                     }
                                 }
                                 break;
@@ -163,11 +163,11 @@ public class HyLores extends JavaPlugin implements Listener
                                 {
                                     if (isNumeric(args[2]))
                                     {
-                                        int line = Integer.parseInt(args[2]);
+                                        int line = Integer.parseInt(args[2]) - 1;
                                         ItemStack itemInHand = getAllVersionItemInHand(player);
                                         String lore = convertColorCode(getTheRestToString(args, 3));
                                         setAllVersionItemInHand(player, insertLore(itemInHand, line, lore));
-                                        sendMessage(player, ChatColor.GREEN + String.format("已在主手物品Lore内第%s行添加%s", line, lore));
+                                        sendMessage(player, ChatColor.GREEN + String.format("已在主手物品Lore内第%s行添加%s", line + 1, lore));
                                     }
                                 }
                                 break;
@@ -176,11 +176,11 @@ public class HyLores extends JavaPlugin implements Listener
                                 {
                                     if (isNumeric(args[2]))
                                     {
-                                        int line = Integer.parseInt(args[2]);
+                                        int line = Integer.parseInt(args[2]) - 1;
                                         ItemStack itemInHand = getAllVersionItemInHand(player);
                                         String lore = convertColorCode(getTheRestToString(args, 3));
                                         setAllVersionItemInHand(player, setLore(itemInHand, line, lore));
-                                        sendMessage(player, ChatColor.GREEN + String.format("已将主手物品Lore内第%s行设置为%s", line, lore));
+                                        sendMessage(player, ChatColor.GREEN + String.format("已将主手物品Lore内第%s行设置为%s", line + 1, lore));
                                     }
                                 }
                                 break;
