@@ -2,6 +2,8 @@ package cc.moecraft.hykilpikonna.lores.Utils;
 
 import java.util.ArrayList;
 
+import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
+
 /**
  * 此类由 Hykilpikonna 在 2017/06/15 创建!
  * Created by Hykilpikonna on 2017/06/15!
@@ -39,6 +41,7 @@ public class ArrayUtils
         {
             output += strings[i] + " ";
         }
+        loglogger.Debug("[工具处理]其余的字符串是: " + output);
         return output;
     }
 }
