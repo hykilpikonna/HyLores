@@ -88,6 +88,11 @@ public class HyLores extends JavaPlugin implements Listener
                 loglogger.Debug("[指令]发送者是玩家");
                 loglogger.Debug(String.format("[指令]指令长度为%s", args.length));
                 //长度是1时第1项是0
+                if (args.length == 0)
+                {
+                    sendHelpMessage(player);
+                    return true;
+                }
                 switch (args[0].toLowerCase())
                 {
                     case "reload":

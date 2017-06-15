@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
 import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.isNumeric;
 
 /**
@@ -22,6 +23,8 @@ public class VersionUtils
     {
         Double tempDouble;
         String bukkitVersion = Bukkit.getVersion();
+        loglogger.Debug("getServer().getClass().getPackage().getName() = " + Bukkit.getServer().getClass().getPackage().getName());
+        loglogger.Debug("name.substring(name.lastIndexOf('.') + 1) = " + Bukkit.getServer().getClass().getPackage().getName().substring(Bukkit.getServer().getClass().getPackage().getName().lastIndexOf('.') + 1));
         if (isNumeric(bukkitVersion.charAt(0)))
         {
             tempDouble = Double.parseDouble(String.valueOf(bukkitVersion.charAt(0)));
