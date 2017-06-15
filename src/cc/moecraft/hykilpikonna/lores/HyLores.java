@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import static cc.moecraft.hykilpikonna.lores.Features.SetNameAndLore.addLore;
+import static cc.moecraft.hykilpikonna.lores.Features.SetNameAndLore.*;
 import static cc.moecraft.hykilpikonna.lores.Messaging.sendHelpMessage;
 import static cc.moecraft.hykilpikonna.lores.Messaging.sendMessage;
 import static cc.moecraft.hykilpikonna.lores.Permission.hasPermission;
@@ -19,9 +19,9 @@ import static cc.moecraft.hykilpikonna.lores.Setup.setup;
 import static cc.moecraft.hykilpikonna.lores.Utils.ArrayUtils.getTheRestToString;
 import static cc.moecraft.hykilpikonna.lores.Utils.ItemUtils.isNull;
 import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.convertColorCode;
+import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.isNumeric;
 import static cc.moecraft.hykilpikonna.lores.Utils.VersionUtils.getAllVersionItemInHand;
 import static cc.moecraft.hykilpikonna.lores.Utils.VersionUtils.setAllVersionItemInHand;
-import static cc.moecraft.hykilpikonna.lores.Features.SetNameAndLore.setName;
 
 /**
  * 此类由 Hykilpikonna 在 2017/06/10 创建!
@@ -147,10 +147,42 @@ public class HyLores extends JavaPlugin implements Listener
                                 }
                                 break;
                             case "remove":
+                                if (hasPermission(player, "Command.lore.remove"))
+                                {
+                                    if (isNumeric(args[2]))
+                                    {
+                                        int line = Integer.parseInt(args[2]);
+                                        ItemStack itemInHand = getAllVersionItemInHand(player);
+                                        setAllVersionItemInHand(player, removeLore(itemInHand, line));
+                                        sendMessage(player, ChatColor.GREEN + String.format("已在主手物品Lore内删除第%s行", line));
+                                    }
+                                }
                                 break;
                             case "insert":
+                                if (hasPermission(player, "Command.lore.insert"))
+                                {
+                                    if (isNumeric(args[2]))
+                                    {
+                                        int line = Integer.parseInt(args[2]);
+                                        ItemStack itemInHand = getAllVersionItemInHand(player);
+                                        String lore = convertColorCode(getTheRestToString(args, 3));
+                                        setAllVersionItemInHand(player, insertLore(itemInHand, line, lore));
+                                        sendMessage(player, ChatColor.GREEN + String.format("已在主手物品Lore内第%s行添加%s", line, lore));
+                                    }
+                                }
                                 break;
                             case "set":
+                                if (hasPermission(player, "Command.lore.set"))
+                                {
+                                    if (isNumeric(args[2]))
+                                    {
+                                        int line = Integer.parseInt(args[2]);
+                                        ItemStack itemInHand = getAllVersionItemInHand(player);
+                                        String lore = convertColorCode(getTheRestToString(args, 3));
+                                        setAllVersionItemInHand(player, setLore(itemInHand, line, lore));
+                                        sendMessage(player, ChatColor.GREEN + String.format("已将主手物品Lore内第%s行设置为%s", line, lore));
+                                    }
+                                }
                                 break;
                         }
                         break;
