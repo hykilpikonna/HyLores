@@ -32,10 +32,10 @@ public class VersionUtils
             {
                 if (isNumeric(version.charAt(3)))
                 {
-                    tempDouble = tempDouble + (Double.parseDouble(String.valueOf(version.charAt(2))) / 10);
+                    tempDouble = tempDouble + (Double.parseDouble(String.valueOf(version.charAt(3))) / 10);
                     if (isNumeric(version.charAt(4)))
                     {
-                        tempDouble = tempDouble + (Double.parseDouble(String.valueOf(version.charAt(2))) / 100);
+                        tempDouble = tempDouble + (Double.parseDouble(String.valueOf(version.charAt(4))) / 100);
                     }
                 }
             }
@@ -57,10 +57,12 @@ public class VersionUtils
     {
         if (getShortVersion() >= 1.9)
         {
+            loglogger.Debug("[多版本]已用1.9以上的API获取手中物品, 物品名: " + player.getInventory().getItemInMainHand().getItemMeta().getDisplayName());
             return player.getInventory().getItemInMainHand();
         }
         else
         {
+            loglogger.Debug("[多版本]已用1.9以下的API获取手中物品, 物品名: " + player.getInventory().getItemInHand().getItemMeta().getDisplayName());
             return player.getInventory().getItemInHand();
         }
     }
@@ -74,11 +76,15 @@ public class VersionUtils
     {
         if (getShortVersion() >= 1.9)
         {
+            loglogger.Debug("[多版本]已用1.9以上的API设置手中物品, 物品名: " + itemStack.getItemMeta().getDisplayName());
             player.getInventory().setItemInMainHand(itemStack);
+            player.updateInventory();
         }
         else
         {
+            loglogger.Debug("[多版本]已用1.9以下的API设置手中物品, 物品名: " + itemStack.getItemMeta().getDisplayName());
             player.getInventory().setItemInHand(itemStack);
+            player.updateInventory();
         }
     }
 }

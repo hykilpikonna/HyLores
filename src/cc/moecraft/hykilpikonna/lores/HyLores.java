@@ -17,6 +17,7 @@ import static cc.moecraft.hykilpikonna.lores.PluginUtil.reload;
 import static cc.moecraft.hykilpikonna.lores.Setup.setup;
 import static cc.moecraft.hykilpikonna.lores.Utils.ArrayUtils.getTheRestToString;
 import static cc.moecraft.hykilpikonna.lores.Utils.ItemUtils.isNull;
+import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.convertColorCode;
 import static cc.moecraft.hykilpikonna.lores.Utils.VersionUtils.getAllVersionItemInHand;
 import static cc.moecraft.hykilpikonna.lores.Utils.VersionUtils.setAllVersionItemInHand;
 import static cc.moecraft.hykilpikonna.lores.Features.SetNameAndLore.setName;
@@ -112,12 +113,18 @@ public class HyLores extends JavaPlugin implements Listener
                         if (hasPermission(player, "Command.setname"))
                         {
                             ItemStack itemInHand = getAllVersionItemInHand(player);
-                            if (!isNull(itemInHand, player))
-                            {
-                                setAllVersionItemInHand(player, setName(itemInHand, getTheRestToString(args, 1)));
-                            }
+                            String oldName = itemInHand.getItemMeta().getDisplayName();
+                            loglogger.Debug("[指令]现在的物品名为: " + oldName);
+                            String newName = convertColorCode(getTheRestToString(args, 1));
+                            setAllVersionItemInHand(player, setName(itemInHand, newName));
+                            sendMessage(player, ChatColor.GREEN + String.format("已将主手内物品名字从%s改为%s", oldName, newName));
                         }
                         break;
+                    //TODO: lore set
+                    //TODO: lore add
+                    //TODO: lore remove
+                    //TODO: lore insert
+                    //TODO: lore removeall
                     default:
                         sendHelpMessage(player);
                         break;
