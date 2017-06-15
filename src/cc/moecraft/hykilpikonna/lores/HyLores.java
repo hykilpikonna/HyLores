@@ -114,9 +114,23 @@ public class HyLores extends JavaPlugin implements Listener
                         {
                             ItemStack itemInHand = getAllVersionItemInHand(player);
                             String oldName = itemInHand.getItemMeta().getDisplayName();
-                            if (oldName.isEmpty() || oldName.equals("null"))
+                            if (oldName == null)
                             {
                                 oldName = itemInHand.getType().name();
+                            }
+                            else
+                            {
+                                if (oldName.isEmpty())
+                                {
+                                    oldName = itemInHand.getType().name();
+                                }
+                                else
+                                {
+                                    if (oldName.equals("null"))
+                                    {
+                                        oldName = itemInHand.getType().name();
+                                    }
+                                }
                             }
                             loglogger.Debug("[指令]现在的物品名为: " + oldName);
                             String newName = convertColorCode(getTheRestToString(args, 1));
