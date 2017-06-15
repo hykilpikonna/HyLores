@@ -100,9 +100,16 @@ public class StringUtils
     {
         for (int i = 0; i < str.length(); i++)
         {
-            if (!Character.isDigit(str.charAt(i)))
+            try
             {
-                return false;
+                if (!Character.isDigit(str.charAt(i)))
+                {
+                    return false;
+                }
+            }
+            catch (NumberFormatException e)
+            {
+                return  false;
             }
         }
         return true;

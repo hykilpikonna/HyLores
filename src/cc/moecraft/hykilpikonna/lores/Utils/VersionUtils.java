@@ -22,20 +22,20 @@ public class VersionUtils
     public static Double getShortVersion()
     {
         Double tempDouble;
-        String bukkitVersion = Bukkit.getVersion();
         loglogger.Debug("getServer().getClass().getPackage().getName() = " + Bukkit.getServer().getClass().getPackage().getName());
         loglogger.Debug("name.substring(name.lastIndexOf('.') + 1) = " + Bukkit.getServer().getClass().getPackage().getName().substring(Bukkit.getServer().getClass().getPackage().getName().lastIndexOf('.') + 1));
-        if (isNumeric(bukkitVersion.charAt(0)))
+        String version = Bukkit.getServer().getClass().getPackage().getName().substring(Bukkit.getServer().getClass().getPackage().getName().lastIndexOf('.') + 1);
+        if (isNumeric(version.charAt(1)))
         {
-            tempDouble = Double.parseDouble(String.valueOf(bukkitVersion.charAt(0)));
-            if (!isNumeric(bukkitVersion.charAt(1)))
+            tempDouble = Double.parseDouble(String.valueOf(version.charAt(1)));
+            if (!isNumeric(version.charAt(2)))
             {
-                if (isNumeric(bukkitVersion.charAt(2)))
+                if (isNumeric(version.charAt(3)))
                 {
-                    tempDouble = tempDouble + (Double.parseDouble(String.valueOf(bukkitVersion.charAt(2))) / 10);
-                    if (isNumeric(bukkitVersion.charAt(3)))
+                    tempDouble = tempDouble + (Double.parseDouble(String.valueOf(version.charAt(2))) / 10);
+                    if (isNumeric(version.charAt(4)))
                     {
-                        tempDouble = tempDouble + (Double.parseDouble(String.valueOf(bukkitVersion.charAt(2))) / 100);
+                        tempDouble = tempDouble + (Double.parseDouble(String.valueOf(version.charAt(2))) / 100);
                     }
                 }
             }
@@ -44,6 +44,7 @@ public class VersionUtils
         {
             return 0.0;
         }
+        loglogger.Debug("计算出的版本号为" + tempDouble);
         return tempDouble;
     }
 
