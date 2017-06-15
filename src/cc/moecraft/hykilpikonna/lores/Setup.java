@@ -27,14 +27,16 @@ public class Setup
             {
                 loglogger.log(ChatColor.RED + "[加载]未检测到PlayEffectAPI, 插件自动退出");
                 unload(Bukkit.getPluginManager().getPlugin("HyLores"));
+                return;
             }
         }
         else
         {
-            if (checkParticleLIB())
+            if (!checkParticleLIB())
             {
                 loglogger.log(ChatColor.RED + "[加载]未检测到ParticleLibAPI, 插件自动退出");
                 unload(Bukkit.getPluginManager().getPlugin("HyLores"));
+                return;
             }
         }
         checkConfig();
