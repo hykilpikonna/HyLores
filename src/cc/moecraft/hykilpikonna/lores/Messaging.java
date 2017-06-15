@@ -63,11 +63,15 @@ public class Messaging
         if (hasPermission(player, "ReceiveHelpMessage"))
         {
             //发送消息
-            sendMessageDirect(player, GRAY + "###############" + GOLD + "Hy" + LIGHT_PURPLE + "Lores" + GRAY + "###############");
-            sendMessageDirect(player, GRAY + "#" + AQUA + "帮助: " + BLUE + BOLD + "/hyl help                    #");
-            sendMessageDirect(player, GRAY + "#" + AQUA + "重载: " + BLUE + BOLD + "/hyl reload                  #");
-            sendMessageDirect(player, GRAY + "#                                   #");
-            sendMessageDirect(player, GRAY + "#####################################");
+            sendMessageDirect(player, GRAY + "#################" + GOLD + "Hy" + LIGHT_PURPLE + "Lores" + GRAY + "#################");
+            sendMessageDirect(player, GRAY + "#" + AQUA + "最新帮助界面: " + BLUE + BOLD + "        /hyl help                #");
+            sendMessageDirect(player, GRAY + "#" + AQUA + "帮助: " + BLUE + BOLD + "        /hyl help                #");
+            sendMessageDirect(player, GRAY + "#" + AQUA + "重载: " + BLUE + BOLD + "        /hyl reload              #");
+            sendMessageDirect(player, GRAY + "#" + AQUA + "设置物品名: " + BLUE + BOLD + "  /hyl setName <Name>      #");
+            sendMessageDirect(player, GRAY + "#" + AQUA + "Lore添加一行: " + BLUE + BOLD + "/hyl lore add <Lore>     #");
+            sendMessageDirect(player, GRAY + "#" + AQUA + "Lore删掉一行: " + BLUE + BOLD + "/hyl lore remove <行数>  #");
+            sendMessageDirect(player, GRAY + "#                                       #");
+            sendMessageDirect(player, GRAY + "#########################################");
         }
     }
 }

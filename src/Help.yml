@@ -1,0 +1,10 @@
+#################HyLores#############################
+#最新帮助界面:   这里
+#帮助:           /hyl help               
+#重载:           /hyl reload
+#设置物品名:     /hyl setName <Name>
+#Lore添加一行:   /hyl lore add <Lore>
+#Lore删掉一行:   /hyl lore remove <行数>
+#Lore设置一行:   /hyl lore set <行数> <Lore>
+#Lore插入一行:   /hyl lore insert <行数> <Lore>
+######################################################

@@ -87,6 +87,9 @@ public class Configs
         config.addDefault("Features.AttackEffect.Randomizing.Z.Divide", 100);
         config.addDefault("Features.AttackEffect.VisibleRange", 100);
 
+        //Lore
+        config.addDefault("Lore.Prefix", GRAY + "[" + DARK_PURPLE + "Hyl" + GRAY + "]");
+
         //保存配置
         getInstance().saveConfig();
     }
