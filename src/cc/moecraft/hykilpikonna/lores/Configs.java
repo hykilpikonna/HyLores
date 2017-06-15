@@ -70,10 +70,20 @@ public class Configs
         config.addDefault("Permissions.ReceiveMessage.Node", "hylores.message.receive");
         config.addDefault("Permissions.ReceiveHelpMessage.Require", false);
         config.addDefault("Permissions.ReceiveHelpMessage.Node", "hylores.message.receive.help");
+
+        //指令权限
         config.addDefault("Permissions.Command.reload.Require", true);
         config.addDefault("Permissions.Command.reload.Node", "hylores.command.reload");
         config.addDefault("Permissions.Command.setname.Require", true);
         config.addDefault("Permissions.Command.setname.Node", "hylores.command.setname");
+        config.addDefault("Permissions.Command.lore.add.Require", true);
+        config.addDefault("Permissions.Command.lore.add.Node", "hylores.command.lore.add");
+        config.addDefault("Permissions.Command.lore.remove.Require", true);
+        config.addDefault("Permissions.Command.lore.remove.Node", "hylores.command.lore.remove");
+        config.addDefault("Permissions.Command.lore.set.Require", true);
+        config.addDefault("Permissions.Command.lore.set.Node", "hylores.command.lore.set");
+        config.addDefault("Permissions.Command.lore.insert.Require", true);
+        config.addDefault("Permissions.Command.lore.insert.Node", "hylores.command.lore.insert");
 
         //消息发送
         config.addDefault("Messaging.Prefix", GRAY + "[" + GOLD + "Hy" + LIGHT_PURPLE + "Lores" + GRAY + "]" + GREEN);

@@ -10,6 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import static cc.moecraft.hykilpikonna.lores.Features.SetNameAndLore.addLore;
 import static cc.moecraft.hykilpikonna.lores.Messaging.sendHelpMessage;
 import static cc.moecraft.hykilpikonna.lores.Messaging.sendMessage;
 import static cc.moecraft.hykilpikonna.lores.Permission.hasPermission;
@@ -118,24 +119,39 @@ public class HyLores extends JavaPlugin implements Listener
                             {
                                 oldName = itemInHand.getType().name();
                             }
-                            else
+                            else if (oldName.isEmpty())
                             {
-                                if (oldName.isEmpty())
-                                {
                                     oldName = itemInHand.getType().name();
-                                }
-                                else
-                                {
-                                    if (oldName.equals("null"))
-                                    {
-                                        oldName = itemInHand.getType().name();
-                                    }
-                                }
                             }
                             loglogger.Debug("[指令]现在的物品名为: " + oldName);
                             String newName = convertColorCode(getTheRestToString(args, 1));
                             setAllVersionItemInHand(player, setName(itemInHand, newName));
                             sendMessage(player, ChatColor.GREEN + String.format("已将主手内物品名字从%s改为%s", oldName, newName));
+                        }
+                        break;
+                    case "lore":
+                        if (!(args.length >= 3))
+                        {
+                            sendHelpMessage(player);
+                            return true;
+                        }
+                        switch (args[1].toLowerCase())
+                        {
+                            case "add":
+                                if (hasPermission(player, "Command.lore.add"))
+                                {
+                                    ItemStack itemInHand = getAllVersionItemInHand(player);
+                                    String lore = convertColorCode(getTheRestToString(args, 2));
+                                    setAllVersionItemInHand(player, addLore(itemInHand, lore));
+                                    sendMessage(player, ChatColor.GREEN + String.format("已在主手物品Lore内添加%s", lore));
+                                }
+                                break;
+                            case "remove":
+                                break;
+                            case "insert":
+                                break;
+                            case "set":
+                                break;
                         }
                         break;
                     //TODO: lore set
