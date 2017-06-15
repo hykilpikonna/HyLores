@@ -7,6 +7,7 @@ import java.util.Objects;
 
 import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
+import static org.bukkit.ChatColor.*;
 
 /**
  * 此类由 Hykilpikonna 在 2017/06/10 创建!
@@ -57,6 +58,15 @@ public class Configs
         //API版本
         config.addDefault("API.UsePlayEffectAPIInsteadOfParticleLib", Bukkit.getVersion().contains("1.7"));
         loglogger.Debug(String.format("[加载]当前服务器版本为%s", Bukkit.getVersion()));
+
+        //权限
+        config.addDefault("Permissions.ReceiveMessage.Require", false);
+        config.addDefault("Permissions.ReceiveMessage.Node", "hylores.message.receive");
+        config.addDefault("Permissions.ReceiveHelpMessage.Require", false);
+        config.addDefault("Permissions.ReceiveHelpMessage.Node", "hylores.message.receive.help");
+
+        //消息发送
+        config.addDefault("Messaging.Prefix", GRAY + "[" + GOLD + "Hy" + LIGHT_PURPLE + "Lores" + GRAY + "]" + GREEN);
 
         //心心特效
         config.addDefault("Features.AttackEffect.Enable", true);

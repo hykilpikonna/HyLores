@@ -3,10 +3,15 @@ package cc.moecraft.hykilpikonna.lores;
 import cc.moecraft.hykilpikonna.essentials.logger.Logger;
 import cc.moecraft.hykilpikonna.lores.Listeners.Effects.AttackEffectListener;
 import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import static cc.moecraft.hykilpikonna.lores.Configs.checkConfig;
+import static cc.moecraft.hykilpikonna.lores.Messaging.sendHelpMessage;
+import static cc.moecraft.hykilpikonna.lores.PluginUtil.reload;
 import static cc.moecraft.hykilpikonna.lores.Setup.setup;
 
 /**
@@ -53,4 +58,61 @@ public class HyLores extends JavaPlugin implements Listener
     }
 
     //TODO: Command
+
+    /**
+     * 执行指令
+     * @param sender 发送指令的人
+     * @param cmd 指令
+     * @param label 指令标签
+     * @param args 指令Arguments
+     * @return 是否执行成功
+     */
+    @Override
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
+    {
+        //判断指令名
+        loglogger.Debug("[指令]指令被触发!");
+        if (cmd.getName().equalsIgnoreCase("hyl") || cmd.getName().equalsIgnoreCase("hylores") || cmd.getName().equalsIgnoreCase("hylore"))
+        {
+            loglogger.Debug("[指令]检测指令名正确");
+            //判断发送者是否是玩家
+            if (sender instanceof Player)
+            {
+                Player player = (Player) sender;
+                //TODO: LanguageAPI
+                loglogger.Debug("[指令]发送者是玩家");
+                loglogger.Debug(String.format("[指令]指令长度为%s", args.length));
+                switch (args.length)
+                {
+                    case 1:
+                        //长度是1时第1项是0
+                        switch (args[0])
+                        {
+                            case "reload":
+                                loglogger.Debug("[指令]检测到指令是重载, 正在开始重载");
+                                reload(this);
+                                break;
+                            default:
+                                sendHelpMessage(player);
+                                break;
+                        }
+                        break;
+                    default:
+                        sendHelpMessage(player);
+                        break;
+                }
+            }
+            else
+            {
+                loglogger.Debug("[指令]发送者不是玩家");
+                //TODO: 不是玩家的情况
+            }
+            return true;
+        }
+        else
+        {
+            loglogger.Debug("[指令]指令名字不对, 已退出, 返回False");
+            return false;
+        }
+    }
 }

@@ -3,7 +3,6 @@ package cc.moecraft.hykilpikonna.lores.Listeners.Effects;
 import cc.moecraft.hykilpikonna.lores.HyLores;
 import me.fromgate.playeffect.VisualEffect;
 import org.bukkit.Bukkit;
-import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,7 +11,6 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.inventivetalent.particle.ParticleEffect;
 
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
