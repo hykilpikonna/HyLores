@@ -48,7 +48,15 @@ public class SetNameAndLore
      */
     public static ItemMeta addLore(ItemStack itemStack, String lore)
     {
-        ArrayList<String> tempAL = (ArrayList<String>) itemStack.getItemMeta().getLore();
+        ArrayList<String> tempAL;
+        if ((ArrayList<String>) itemStack.getItemMeta().getLore() != null)
+        {
+            tempAL = (ArrayList<String>) itemStack.getItemMeta().getLore();
+        }
+        else
+        {
+            tempAL = new ArrayList<>();
+        }
         tempAL.add(lore);
 
         ItemMeta itemMeta = itemStack.getItemMeta();
@@ -64,11 +72,19 @@ public class SetNameAndLore
      */
     public static ItemMeta removeLore(ItemStack itemStack, int index)
     {
-        ArrayList<String> lore = (ArrayList<String>) itemStack.getItemMeta().getLore();
-        lore.remove(index);
+        ArrayList<String> tempAL;
+        if ((ArrayList<String>) itemStack.getItemMeta().getLore() != null)
+        {
+            tempAL = (ArrayList<String>) itemStack.getItemMeta().getLore();
+        }
+        else
+        {
+            tempAL = new ArrayList<>();
+        }
+        tempAL.remove(index);
 
         ItemMeta itemMeta = itemStack.getItemMeta();
-        itemMeta.setLore(lore);
+        itemMeta.setLore(tempAL);
         return itemMeta;
     }
 
@@ -81,7 +97,15 @@ public class SetNameAndLore
      */
     public static ItemMeta setLore(ItemStack itemStack, int index, String lore)
     {
-        ArrayList<String> tempAL = (ArrayList<String>) itemStack.getItemMeta().getLore();
+        ArrayList<String> tempAL;
+        if ((ArrayList<String>) itemStack.getItemMeta().getLore() != null)
+        {
+            tempAL = (ArrayList<String>) itemStack.getItemMeta().getLore();
+        }
+        else
+        {
+            tempAL = new ArrayList<>();
+        }
         tempAL.set(index, lore);
 
         ItemMeta itemMeta = itemStack.getItemMeta();
@@ -98,7 +122,15 @@ public class SetNameAndLore
      */
     public static ItemMeta insertLore(ItemStack itemStack, int index, String lore)
     {
-        ArrayList<String> tempAL = (ArrayList<String>) itemStack.getItemMeta().getLore();
+        ArrayList<String> tempAL;
+        if ((ArrayList<String>) itemStack.getItemMeta().getLore() != null)
+        {
+            tempAL = (ArrayList<String>) itemStack.getItemMeta().getLore();
+        }
+        else
+        {
+            tempAL = new ArrayList<>();
+        }
         tempAL.add(index, lore);
 
         ItemMeta itemMeta = itemStack.getItemMeta();
