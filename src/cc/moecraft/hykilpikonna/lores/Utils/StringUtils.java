@@ -100,6 +100,7 @@ public class StringUtils
     {
         for (int i = 0; i < str.length(); i++)
         {
+            if (str.charAt(i) == '_') return false;
             try
             {
                 if (!Character.isDigit(str.charAt(i)))
