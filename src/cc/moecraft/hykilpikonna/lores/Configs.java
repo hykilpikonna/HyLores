@@ -70,6 +70,8 @@ public class Configs
         config.addDefault("Permissions.ReceiveMessage.Node", "hylores.message.receive");
         config.addDefault("Permissions.ReceiveHelpMessage.Require", false);
         config.addDefault("Permissions.ReceiveHelpMessage.Node", "hylores.message.receive.help");
+        config.addDefault("Permissions.Command.reload.Require", true);
+        config.addDefault("Permissions.Command.reload.Node", "hylores.command.reload");
         config.addDefault("Permissions.Command.setname.Require", true);
         config.addDefault("Permissions.Command.setname.Node", "hylores.command.setname");
 

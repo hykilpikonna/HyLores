@@ -2,6 +2,7 @@ package cc.moecraft.hykilpikonna.lores;
 
 import cc.moecraft.hykilpikonna.essentials.logger.Logger;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -10,6 +11,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import static cc.moecraft.hykilpikonna.lores.Messaging.sendHelpMessage;
+import static cc.moecraft.hykilpikonna.lores.Messaging.sendMessage;
 import static cc.moecraft.hykilpikonna.lores.Permission.hasPermission;
 import static cc.moecraft.hykilpikonna.lores.PluginUtil.reload;
 import static cc.moecraft.hykilpikonna.lores.Setup.setup;
@@ -97,7 +99,13 @@ public class HyLores extends JavaPlugin implements Listener
                 {
                     case "reload":
                         loglogger.Debug("[指令]检测到指令是重载, 正在开始重载");
-                        reload(this);
+                        if (hasPermission(player, "Command.reload"))
+                        {
+                            sendMessage(player, ChatColor.GREEN + "插件正在重新加载....");
+                            String tempPrefix = getInstance().getConfig().getString("Messaging.Prefix");
+                            reload(this);
+                            player.sendMessage(tempPrefix + ChatColor.GREEN + "插件重载成功!");
+                        }
                         break;
                     case "setname":
                         loglogger.Debug("[指令]检测到指令是设置物品名");
