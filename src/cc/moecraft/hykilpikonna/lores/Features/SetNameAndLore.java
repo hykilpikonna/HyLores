@@ -6,6 +6,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 
+import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
+
 /**
  * 此类由 Hykilpikonna 在 2017/06/15 创建!
  * Created by Hykilpikonna on 2017/06/15!
@@ -14,6 +16,8 @@ import java.util.ArrayList;
  */
 public class SetNameAndLore
 {
+    private static String prefix = getInstance().getConfig().getString("Lore.Prefix");
+
     /**
      * 设置一个ItemStack的物品显示名
      * @param itemStack 物品
@@ -57,7 +61,7 @@ public class SetNameAndLore
         {
             tempAL = new ArrayList<>();
         }
-        tempAL.add(lore);
+        tempAL.add(prefix + lore);
 
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setLore(tempAL);
@@ -106,7 +110,7 @@ public class SetNameAndLore
         {
             tempAL = new ArrayList<>();
         }
-        tempAL.set(index, lore);
+        tempAL.set(index, prefix + lore);
 
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setLore(tempAL);
@@ -131,7 +135,7 @@ public class SetNameAndLore
         {
             tempAL = new ArrayList<>();
         }
-        tempAL.add(index, lore);
+        tempAL.add(index, prefix + lore);
 
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setLore(tempAL);
