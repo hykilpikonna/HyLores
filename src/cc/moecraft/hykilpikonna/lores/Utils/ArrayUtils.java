@@ -37,7 +37,7 @@ public class ArrayUtils
         String output = "";
         for (int i = index; i < strings.length; i++)
         {
-            output += strings[i];
+            output += strings[i] + " ";
         }
         return output;
     }

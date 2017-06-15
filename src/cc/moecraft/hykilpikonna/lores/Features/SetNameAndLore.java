@@ -2,6 +2,7 @@ package cc.moecraft.hykilpikonna.lores.Features;
 
 import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 
@@ -19,10 +20,11 @@ public class SetNameAndLore
      * @param name 新的显示名
      * @return 新的物品
      */
-    public static ItemStack setName(ItemStack itemStack, String name)
+    public static ItemMeta setName(ItemStack itemStack, String name)
     {
-        itemStack.getItemMeta().setDisplayName(name);
-        return itemStack;
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.setDisplayName(name);
+        return itemMeta;
     }
 
     /**
@@ -31,10 +33,11 @@ public class SetNameAndLore
      * @param lore 新的Lore
      * @return 新的物品
      */
-    public static ItemStack setLoreArrayList(ItemStack itemStack, ArrayList<String> lore)
+    public static ItemMeta setLoreArrayList(ItemStack itemStack, ArrayList<String> lore)
     {
-        itemStack.getItemMeta().setLore(lore);
-        return itemStack;
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.setLore(lore);
+        return itemMeta;
     }
 
     /**
@@ -43,12 +46,14 @@ public class SetNameAndLore
      * @param lore lore
      * @return 新的物品
      */
-    public static ItemStack addLore(ItemStack itemStack, String lore)
+    public static ItemMeta addLore(ItemStack itemStack, String lore)
     {
         ArrayList<String> tempAL = (ArrayList<String>) itemStack.getItemMeta().getLore();
         tempAL.add(lore);
-        itemStack.getItemMeta().setLore(tempAL);
-        return itemStack;
+
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.setLore(tempAL);
+        return itemMeta;
     }
 
     /**
@@ -57,12 +62,14 @@ public class SetNameAndLore
      * @param index 行数
      * @return 新的物品
      */
-    public static ItemStack removeLore(ItemStack itemStack, int index)
+    public static ItemMeta removeLore(ItemStack itemStack, int index)
     {
         ArrayList<String> lore = (ArrayList<String>) itemStack.getItemMeta().getLore();
         lore.remove(index);
-        itemStack.getItemMeta().setLore(lore);
-        return itemStack;
+
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.setLore(lore);
+        return itemMeta;
     }
 
     /**
@@ -72,12 +79,14 @@ public class SetNameAndLore
      * @param lore 新的Lore
      * @return 新的物品
      */
-    public static ItemStack setLore(ItemStack itemStack, int index, String lore)
+    public static ItemMeta setLore(ItemStack itemStack, int index, String lore)
     {
         ArrayList<String> tempAL = (ArrayList<String>) itemStack.getItemMeta().getLore();
         tempAL.set(index, lore);
-        itemStack.getItemMeta().setLore(tempAL);
-        return itemStack;
+
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.setLore(tempAL);
+        return itemMeta;
     }
 
     /**
@@ -87,11 +96,13 @@ public class SetNameAndLore
      * @param lore 要插入的Lore
      * @return 插入后的物品
      */
-    public static ItemStack insertLore(ItemStack itemStack, int index, String lore)
+    public static ItemMeta insertLore(ItemStack itemStack, int index, String lore)
     {
         ArrayList<String> tempAL = (ArrayList<String>) itemStack.getItemMeta().getLore();
         tempAL.add(index, lore);
-        itemStack.getItemMeta().setLore(tempAL);
-        return itemStack;
+
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.setLore(tempAL);
+        return itemMeta;
     }
 }

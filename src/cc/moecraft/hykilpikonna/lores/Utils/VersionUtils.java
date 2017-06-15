@@ -3,6 +3,7 @@ package cc.moecraft.hykilpikonna.lores.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
 import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.isNumeric;
@@ -68,22 +69,22 @@ public class VersionUtils
     }
 
     /**
-     * 设置玩家手上物品(全版本)
+     * 设置玩家手上物品数据(全版本)
      * @param player 玩家
-     * @param itemStack 手上物品
+     * @param itemMeta 手上物品数据
      */
-    public static void setAllVersionItemInHand(Player player, ItemStack itemStack)
+    public static void setAllVersionItemInHand(Player player, ItemMeta itemMeta)
     {
         if (getShortVersion() >= 1.9)
         {
-            loglogger.Debug("[多版本]已用1.9以上的API设置手中物品, 物品名: " + itemStack.getItemMeta().getDisplayName());
-            player.getInventory().setItemInMainHand(itemStack);
+            loglogger.Debug("[多版本]已用1.9以上的API设置手中物品, 物品名: " + itemMeta.getDisplayName());
+            player.getInventory().getItemInMainHand().setItemMeta(itemMeta);
             player.updateInventory();
         }
         else
         {
-            loglogger.Debug("[多版本]已用1.9以下的API设置手中物品, 物品名: " + itemStack.getItemMeta().getDisplayName());
-            player.getInventory().setItemInHand(itemStack);
+            loglogger.Debug("[多版本]已用1.9以下的API设置手中物品, 物品名: " + itemMeta.getDisplayName());
+            player.getInventory().getItemInHand().setItemMeta(itemMeta);
             player.updateInventory();
         }
     }
