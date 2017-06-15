@@ -7,6 +7,7 @@ import java.util.Objects;
 
 import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
+import static cc.moecraft.hykilpikonna.lores.Utils.VersionUtils.getShortVersion;
 import static org.bukkit.ChatColor.*;
 
 /**
@@ -59,11 +60,18 @@ public class Configs
         config.addDefault("API.UsePlayEffectAPIInsteadOfParticleLib", Bukkit.getVersion().contains("1.7"));
         loglogger.Debug(String.format("[加载]当前服务器版本为%s", Bukkit.getVersion()));
 
+        //版本
+        config.addDefault("MinecraftVersion.FullID", Bukkit.getVersion());
+        config.addDefault("MinecraftVersion.ID", getShortVersion());
+        loglogger.Debug(String.format("[加载]当前服务器缩略版本号为%s", getShortVersion()));
+
         //权限
         config.addDefault("Permissions.ReceiveMessage.Require", false);
         config.addDefault("Permissions.ReceiveMessage.Node", "hylores.message.receive");
         config.addDefault("Permissions.ReceiveHelpMessage.Require", false);
         config.addDefault("Permissions.ReceiveHelpMessage.Node", "hylores.message.receive.help");
+        config.addDefault("Permissions.Command.setname.Require", true);
+        config.addDefault("Permissions.Command.setname.Node", "hylores.command.setname");
 
         //消息发送
         config.addDefault("Messaging.Prefix", GRAY + "[" + GOLD + "Hy" + LIGHT_PURPLE + "Lores" + GRAY + "]" + GREEN);

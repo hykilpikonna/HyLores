@@ -1,5 +1,7 @@
 package cc.moecraft.hykilpikonna.lores.Utils;
 
+import org.bukkit.ChatColor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,5 +89,32 @@ public class StringUtils
             output.add(convertColorCode(reg.get(i)).replace("§", ""));
         }
         return output;
+    }
+
+    /**
+     * 判断一个String是不是数字
+     * @param str 字符串
+     * @return 是不是数字
+     */
+    public static boolean isNumeric(String str)
+    {
+        for (int i = 0; i < str.length(); i++)
+        {
+            if (!Character.isDigit(str.charAt(i)))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 判断一个Char是不是数字
+     * @param character 字符
+     * @return 是不是数字
+     */
+    public static boolean isNumeric(Character character)
+    {
+        return Character.isDigit(character);
     }
 }

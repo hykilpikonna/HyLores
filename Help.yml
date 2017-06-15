@@ -1,10 +1,27 @@
-#################HyLores#############################
-#最新帮助界面:   这里
+######################################################
+#                    Hylores 帮助                    #
+#
 #帮助:           /hyl help               
 #重载:           /hyl reload
-#设置物品名:     /hyl setName <Name>
+#设置物品名:     /hyl setname <Name>
 #Lore添加一行:   /hyl lore add <Lore>
 #Lore删掉一行:   /hyl lore remove <行数>
 #Lore设置一行:   /hyl lore set <行数> <Lore>
 #Lore插入一行:   /hyl lore insert <行数> <Lore>
+#                                                    #
+######################################################
+
+
+######################################################
+#                    Hylores 帮助                    #
+#                (按指令Args长度排序)                #
+#                                                    #
+#1. 帮助:           /hyl help
+#1. 重载:           /hyl reload
+#2. 设置物品名:     /hyl setname <Name(可以无限长)>
+#3. Lore添加一行:   /hyl lore add <Lore>
+#3. Lore删掉一行:   /hyl lore remove <行数>
+#4. Lore设置一行:   /hyl lore set <行数> <Lore>
+#4. Lore插入一行:   /hyl lore insert <行数> <Lore>
+#                                                    #
 ######################################################

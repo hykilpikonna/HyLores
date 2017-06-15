@@ -1,18 +1,23 @@
 package cc.moecraft.hykilpikonna.lores;
 
 import cc.moecraft.hykilpikonna.essentials.logger.Logger;
-import cc.moecraft.hykilpikonna.lores.Listeners.Effects.AttackEffectListener;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import static cc.moecraft.hykilpikonna.lores.Configs.checkConfig;
 import static cc.moecraft.hykilpikonna.lores.Messaging.sendHelpMessage;
+import static cc.moecraft.hykilpikonna.lores.Permission.hasPermission;
 import static cc.moecraft.hykilpikonna.lores.PluginUtil.reload;
 import static cc.moecraft.hykilpikonna.lores.Setup.setup;
+import static cc.moecraft.hykilpikonna.lores.Utils.ArrayUtils.getTheRestToString;
+import static cc.moecraft.hykilpikonna.lores.Utils.ItemUtils.isNull;
+import static cc.moecraft.hykilpikonna.lores.Utils.VersionUtils.getAllVersionItemInHand;
+import static cc.moecraft.hykilpikonna.lores.Utils.VersionUtils.setAllVersionItemInHand;
+import static cc.moecraft.hykilpikonna.lores.Features.SetNameAndLore.setName;
 
 /**
  * 此类由 Hykilpikonna 在 2017/06/10 创建!
@@ -82,19 +87,22 @@ public class HyLores extends JavaPlugin implements Listener
                 //TODO: LanguageAPI
                 loglogger.Debug("[指令]发送者是玩家");
                 loglogger.Debug(String.format("[指令]指令长度为%s", args.length));
-                switch (args.length)
+                //长度是1时第1项是0
+                switch (args[0].toLowerCase())
                 {
-                    case 1:
-                        //长度是1时第1项是0
-                        switch (args[0])
+                    case "reload":
+                        loglogger.Debug("[指令]检测到指令是重载, 正在开始重载");
+                        reload(this);
+                        break;
+                    case "setname":
+                        loglogger.Debug("[指令]检测到指令是设置物品名");
+                        if (hasPermission(player, "Command.setname"))
                         {
-                            case "reload":
-                                loglogger.Debug("[指令]检测到指令是重载, 正在开始重载");
-                                reload(this);
-                                break;
-                            default:
-                                sendHelpMessage(player);
-                                break;
+                            ItemStack itemInHand = getAllVersionItemInHand(player);
+                            if (!isNull(itemInHand, player))
+                            {
+                                setAllVersionItemInHand(player, setName(itemInHand, getTheRestToString(args, 1)));
+                            }
                         }
                         break;
                     default:
