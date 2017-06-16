@@ -7,6 +7,7 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
+import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
 import static cc.moecraft.hykilpikonna.lores.Utils.LoreUtils.readLore;
 import static cc.moecraft.hykilpikonna.lores.Utils.VersionUtils.getAllVersionItemInHand;
 
@@ -36,7 +37,15 @@ public class ItemUtils
     public static ArrayList<ArrayList<String>> getAllItemLores(Player player)
     {
         ArrayList<ArrayList<String>> output = new ArrayList<>();
-        output.add(readLore((ArrayList<String>) player.getInventory().getHelmet().getItemMeta().getLore()));
+        try
+        {
+            output.add(readLore((ArrayList<String>) player.getInventory().getHelmet().getItemMeta().getLore()));
+            loglogger.Debug("[获取物品]检测到头盔, 已添加");
+        }
+        catch (NullPointerException e)
+        {
+            loglogger.Debug("[获取物品]未检测到头盔, 已无视");
+        }
         output.add(readLore((ArrayList<String>) player.getInventory().getChestplate().getItemMeta().getLore()));
         output.add(readLore((ArrayList<String>) player.getInventory().getLeggings().getItemMeta().getLore()));
         output.add(readLore((ArrayList<String>) player.getInventory().getBoots().getItemMeta().getLore()));

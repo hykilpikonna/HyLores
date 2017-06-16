@@ -1,6 +1,7 @@
 package cc.moecraft.hykilpikonna.lores;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.Configuration;
 
 import java.util.Objects;
@@ -109,7 +110,7 @@ public class Configs
         config.addDefault("Features.AttackEffect.VisibleRange", 100);
 
         //Lore
-        config.addDefault("Lore.Prefix", "*");
+        config.addDefault("Lore.Prefix", ChatColor.GRAY + "*");
         config.addDefault("Lore.Buffs.DamageBoost.Enable", true);
         config.addDefault("Lore.Buffs.DamageBoost.Multiplier", 1);
         config.addDefault("Lore.Buffs.DamageBoost.Override", false);
