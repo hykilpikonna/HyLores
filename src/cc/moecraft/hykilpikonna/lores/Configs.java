@@ -109,7 +109,11 @@ public class Configs
         config.addDefault("Features.AttackEffect.VisibleRange", 100);
 
         //Lore
-        config.addDefault("Lore.Prefix", convertColorCode("&7&l[&6&lHy&3&lLores&7&l] &r"));
+        config.addDefault("Lore.Prefix", "*");
+        config.addDefault("Lore.Buffs.DamageBoost.Enable", true);
+        config.addDefault("Lore.Buffs.DamageBoost.Multiplier", 1);
+        config.addDefault("Lore.Buffs.DamageBoost.Override", false);
+        config.addDefault("Lore.Buffs.DamageBoost.KeyWord", "攻击力");
 
         //保存配置
         getInstance().saveConfig();

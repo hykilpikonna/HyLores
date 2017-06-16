@@ -1,4 +1,4 @@
-package cc.moecraft.hykilpikonna.lores.Listeners.Effects;
+package cc.moecraft.hykilpikonna.lores.Features.Lores.Effects;
 
 import cc.moecraft.hykilpikonna.lores.HyLores;
 import me.fromgate.playeffect.VisualEffect;

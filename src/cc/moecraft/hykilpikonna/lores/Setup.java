@@ -1,9 +1,10 @@
 package cc.moecraft.hykilpikonna.lores;
 
-import cc.moecraft.hykilpikonna.lores.Listeners.Effects.AttackEffectListener;
+import cc.moecraft.hykilpikonna.lores.Features.Lores.Buff.DamageBoostListener;
+import cc.moecraft.hykilpikonna.lores.Features.Lores.Effects.AttackEffectListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.plugin.Plugin;
+
 import static cc.moecraft.hykilpikonna.lores.Configs.checkConfig;
 import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
@@ -17,7 +18,11 @@ import static cc.moecraft.hykilpikonna.lores.PluginUtil.unload;
  */
 public class Setup
 {
+    //加载监听器
     public static final AttackEffectListener ATTACK_EFFECT_LISTENER = new AttackEffectListener();
+    public static final DamageBoostListener DAMAGE_BOOST_LISTENER = new DamageBoostListener();
+
+
     public static void setup()
     {
         loglogger.Debug("[加载]正在运行Setup");

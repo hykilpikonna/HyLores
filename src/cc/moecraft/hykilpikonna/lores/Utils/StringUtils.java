@@ -125,4 +125,14 @@ public class StringUtils
     {
         return Character.isDigit(character);
     }
+
+    /**
+     * 去除一个字符串中的空格
+     * @param string 字符串
+     * @return 空格
+     */
+    public static String removeSpace(String string)
+    {
+        return string.replace(" ", "");
+    }
 }

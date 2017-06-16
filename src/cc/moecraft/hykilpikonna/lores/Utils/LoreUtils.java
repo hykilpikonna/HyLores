@@ -22,6 +22,12 @@ public class LoreUtils
      */
     public static ArrayList<String> readLore(ArrayList<String> lore)
     {
+        if (lore == null)
+        {
+            loglogger.Debug("[Lore]Lore是Null");
+            return null;
+        }
+
         loglogger.Debug("[Lore]正在把Lore转换为技能列表");
         ArrayList<String> list = new ArrayList<>();
         String prefix = removeColorCode(getInstance().getConfig().getString("Lore.Prefix"));

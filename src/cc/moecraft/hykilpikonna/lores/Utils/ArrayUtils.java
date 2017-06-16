@@ -44,4 +44,38 @@ public class ArrayUtils
         loglogger.Debug("[工具处理]其余的字符串是: " + output);
         return output;
     }
+
+    /**
+     * 获取剩下的
+     * @param strings ArrayList
+     * @param index 最小
+     * @return 剩下的
+     */
+    public static String getTheRestToString(ArrayList<String> strings, int index)
+    {
+        String output = "";
+        for (int i = index; i < strings.size(); i++)
+        {
+            output += strings.get(i) + " ";
+        }
+        loglogger.Debug("[工具处理]其余的字符串是: " + output);
+        return output;
+    }
+
+    /**
+     * 获取剩下的
+     * @param string String
+     * @param index 最小
+     * @return 剩下的
+     */
+    public static String getTheRestToString(String string, int index)
+    {
+        String output = "";
+        for (int i = index; i < string.length(); i++)
+        {
+            output += string.charAt(i) + " ";
+        }
+        loglogger.Debug("[工具处理]其余的字符串是: " + output);
+        return output;
+    }
 }

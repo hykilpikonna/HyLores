@@ -1,4 +1,4 @@
-package cc.moecraft.hykilpikonna.lores.Features;
+package cc.moecraft.hykilpikonna.lores.Features.Command;
 
 import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;

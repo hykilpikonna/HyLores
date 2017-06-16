@@ -10,14 +10,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import static cc.moecraft.hykilpikonna.lores.Features.SetNameAndLore.*;
+import static cc.moecraft.hykilpikonna.lores.Features.Command.SetNameAndLore.*;
 import static cc.moecraft.hykilpikonna.lores.Messaging.sendHelpMessage;
 import static cc.moecraft.hykilpikonna.lores.Messaging.sendMessage;
 import static cc.moecraft.hykilpikonna.lores.Permission.hasPermission;
 import static cc.moecraft.hykilpikonna.lores.PluginUtil.reload;
 import static cc.moecraft.hykilpikonna.lores.Setup.setup;
 import static cc.moecraft.hykilpikonna.lores.Utils.ArrayUtils.getTheRestToString;
-import static cc.moecraft.hykilpikonna.lores.Utils.ItemUtils.isNull;
 import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.convertColorCode;
 import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.isNumeric;
 import static cc.moecraft.hykilpikonna.lores.Utils.VersionUtils.getAllVersionItemInHand;
@@ -186,11 +185,6 @@ public class HyLores extends JavaPlugin implements Listener
                                 break;
                         }
                         break;
-                    //TODO: lore set
-                    //TODO: lore add
-                    //TODO: lore remove
-                    //TODO: lore insert
-                    //TODO: lore removeall
                     default:
                         sendHelpMessage(player);
                         break;
