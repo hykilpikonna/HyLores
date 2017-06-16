@@ -83,7 +83,9 @@ public class SetNameAndLore
         }
         else
         {
-            tempAL = new ArrayList<>();
+            ItemMeta itemMeta = itemStack.getItemMeta();
+            itemMeta.setLore(new ArrayList<String>());
+            return itemMeta;
         }
         tempAL.remove(index);
 
