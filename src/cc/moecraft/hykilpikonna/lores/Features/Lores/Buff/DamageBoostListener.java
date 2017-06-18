@@ -58,36 +58,45 @@ public class DamageBoostListener implements Listener
     {
         ArrayList<ArrayList<String>> allItemLores = getAllItemLores(player);
         double totalDamage = inputDamage + 0.0;
+
+        if (allItemLores == null || allItemLores.size() < 1)
+        {
+            return totalDamage;
+        }
+
         for (int i = 0; i < allItemLores.size(); i++)
         {
-            for (int j = 0; j < allItemLores.get(i).size(); j++)
+            if (allItemLores.get(i) != null)
             {
-                String one = removeSpace(allItemLores.get(i).get(j));
-                String keyWord = getInstance().getConfig().getString("Lore.Buffs.DamageBoost.KeyWord");
-                if (one.contains(keyWord))
+                for (int j = 0; j < allItemLores.get(i).size(); j++)
                 {
-                    one = one.replace(keyWord, "");
-                    if (one.length() > 0)
+                    String one = removeSpace(allItemLores.get(i).get(j));
+                    String keyWord = getInstance().getConfig().getString("Lore.Buffs.DamageBoost.KeyWord");
+                    if (one.contains(keyWord))
                     {
-                        loglogger.Debug("one.charAt(0) == " + one.charAt(0));
-                        switch (one.charAt(0))
+                        one = one.replace(keyWord, "");
+                        if (one.length() > 0)
                         {
-                            case '+':
-                                totalDamage += Double.parseDouble(getTheRestToString(one, 1));
-                                break;
-                            case '-':
-                                totalDamage -= Double.parseDouble(getTheRestToString(one, 1));
-                                break;
-                            case '*':
-                                totalDamage *= Double.parseDouble(getTheRestToString(one, 1));
-                                break;
-                            case '/':
-                                totalDamage /= Double.parseDouble(getTheRestToString(one, 1));
-                                break;
-                            default:
-                                //+但是少了一位
-                                totalDamage += Double.parseDouble(getTheRestToString(one, 0));
-                                break;
+                            loglogger.Debug("one.charAt(0) == " + one.charAt(0));
+                            switch (one.charAt(0))
+                            {
+                                case '+':
+                                    totalDamage += Double.parseDouble(getTheRestToString(one, 1));
+                                    break;
+                                case '-':
+                                    totalDamage -= Double.parseDouble(getTheRestToString(one, 1));
+                                    break;
+                                case '*':
+                                    totalDamage *= Double.parseDouble(getTheRestToString(one, 1));
+                                    break;
+                                case '/':
+                                    totalDamage /= Double.parseDouble(getTheRestToString(one, 1));
+                                    break;
+                                default:
+                                    //+但是少了一位
+                                    totalDamage += Double.parseDouble(getTheRestToString(one, 0));
+                                    break;
+                            }
                         }
                     }
                 }

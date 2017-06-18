@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10f1cc0b-c60f-4408-81fa-94c9b3c6ca06" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/HyLores/HyLores.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/ItemUtils.java" afterPath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/ItemUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Lores/Buff/DamageBoostListener.java" afterPath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Lores/Buff/DamageBoostListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugin.yml" afterPath="$PROJECT_DIR$/src/plugin.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -75,8 +73,8 @@
       <file leaf-file-name="DamageBoostListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Lores/Buff/DamageBoostListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="47" column="26" lean-forward="false" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+            <state relative-caret-position="800">
+              <caret line="101" column="17" lean-forward="false" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,10 +164,10 @@
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/LoreUtils.java" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/StringUtils.java" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/ArrayUtils.java" />
-        <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Lores/Buff/DamageBoostListener.java" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Command/SetNameAndLore.java" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Configs.java" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/ItemUtils.java" />
+        <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Lores/Buff/DamageBoostListener.java" />
         <option value="$PROJECT_DIR$/src/plugin.yml" />
       </list>
     </option>
@@ -697,7 +695,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1099,16 +1097,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Lores/Buff/DamageBoostListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="47" column="26" lean-forward="false" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/HyLores.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="800">
@@ -1133,6 +1121,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="800">
           <caret line="92" column="43" lean-forward="false" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Lores/Buff/DamageBoostListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="101" column="17" lean-forward="false" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
