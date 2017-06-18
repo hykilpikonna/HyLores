@@ -37,6 +37,8 @@ public class ItemUtils
     public static ArrayList<ArrayList<String>> getAllItemLores(Player player)
     {
         ArrayList<ArrayList<String>> output = new ArrayList<>();
+
+        //头盔
         try
         {
             output.add(readLore((ArrayList<String>) player.getInventory().getHelmet().getItemMeta().getLore()));
@@ -46,10 +48,51 @@ public class ItemUtils
         {
             loglogger.Debug("[获取物品]未检测到头盔, 已无视");
         }
-        output.add(readLore((ArrayList<String>) player.getInventory().getChestplate().getItemMeta().getLore()));
-        output.add(readLore((ArrayList<String>) player.getInventory().getLeggings().getItemMeta().getLore()));
-        output.add(readLore((ArrayList<String>) player.getInventory().getBoots().getItemMeta().getLore()));
-        output.add(readLore((ArrayList<String>) getAllVersionItemInHand(player).getItemMeta().getLore()));
+
+        //胸甲
+        try
+        {
+            output.add(readLore((ArrayList<String>) player.getInventory().getChestplate().getItemMeta().getLore()));
+            loglogger.Debug("[获取物品]检测到胸甲, 已添加");
+        }
+        catch (NullPointerException e)
+        {
+            loglogger.Debug("[获取物品]未检测到胸甲, 已无视");
+        }
+
+        //护腿
+        try
+        {
+            output.add(readLore((ArrayList<String>) player.getInventory().getLeggings().getItemMeta().getLore()));
+            loglogger.Debug("[获取物品]检测到护腿, 已添加");
+        }
+        catch (NullPointerException e)
+        {
+            loglogger.Debug("[获取物品]未检测到护腿, 已无视");
+        }
+
+        //鞋子
+        try
+        {
+            output.add(readLore((ArrayList<String>) player.getInventory().getBoots().getItemMeta().getLore()));
+            loglogger.Debug("[获取物品]检测到鞋子, 已添加");
+        }
+        catch (NullPointerException e)
+        {
+            loglogger.Debug("[获取物品]未检测到鞋子, 已无视");
+        }
+
+        //手上物品
+        try
+        {
+            output.add(readLore((ArrayList<String>) getAllVersionItemInHand(player).getItemMeta().getLore()));
+            loglogger.Debug("[获取物品]检测到手上物品, 已添加");
+        }
+        catch (NullPointerException e)
+        {
+            loglogger.Debug("[获取物品]未检测到手上物品, 已无视");
+        }
+
         return output;
     }
 }
