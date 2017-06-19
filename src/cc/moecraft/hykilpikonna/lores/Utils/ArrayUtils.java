@@ -104,6 +104,11 @@ public class ArrayUtils
             if (tempString.contains(prefix))
             {
                 list.add(tempString.replace(prefix, ""));
+                loglogger.Debug(String.format("[Lore]行数:%s, 值:%s", i, list.get(i)));
+            }
+            else
+            {
+                loglogger.Debug(String.format("[Lore]未通过验证: Prefix = %s, Lore = %s", prefix, tempString));
             }
         }
         return list;

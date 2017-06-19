@@ -23,8 +23,7 @@ public class VersionUtils
     public static Double getShortVersion()
     {
         Double tempDouble;
-        loglogger.Debug("getServer().getClass().getPackage().getName() = " + Bukkit.getServer().getClass().getPackage().getName());
-        loglogger.Debug("name.substring(name.lastIndexOf('.') + 1) = " + Bukkit.getServer().getClass().getPackage().getName().substring(Bukkit.getServer().getClass().getPackage().getName().lastIndexOf('.') + 1));
+        loglogger.Debug("getServer().getClass().getPackage().getName().substring(name.lastIndexOf('.') + 1) = " + Bukkit.getServer().getClass().getPackage().getName().substring(Bukkit.getServer().getClass().getPackage().getName().lastIndexOf('.') + 1));
         String version = Bukkit.getServer().getClass().getPackage().getName().substring(Bukkit.getServer().getClass().getPackage().getName().lastIndexOf('.') + 1);
         if (isNumeric(version.charAt(1)))
         {

@@ -99,7 +99,6 @@ public class HyLores extends JavaPlugin implements Listener
                 switch (args[0].toLowerCase())
                 {
                     case "reload":
-                        loglogger.Debug("[指令]检测到指令是重载, 正在开始重载");
                         if (hasPermission(player, "Command.reload"))
                         {
                             sendMessage(player, ChatColor.GREEN + "插件正在重新加载....");

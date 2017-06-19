@@ -19,6 +19,7 @@ import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
 import static cc.moecraft.hykilpikonna.lores.Utils.ArrayUtils.getTheRestToString;
 import static cc.moecraft.hykilpikonna.lores.Utils.EventUtils.getEntityDamageByEntityEventPlayerDamager;
 import static cc.moecraft.hykilpikonna.lores.Utils.ItemUtils.getAllItemLores;
+import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.removeColorCode;
 import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.removeSpace;
 import static me.fromgate.playeffect.PlayEffect.play;
 
@@ -67,7 +68,7 @@ public class DamageBoostListener implements Listener
             {
                 for (int j = 0; j < allItemLores.get(i).size(); j++)
                 {
-                    String one = removeSpace(allItemLores.get(i).get(j));
+                    String one = removeSpace(removeColorCode(allItemLores.get(i).get(j)));
                     String keyWord = getInstance().getConfig().getString("Lore.Buffs.DamageBoost.KeyWord");
                     if (one.contains(keyWord))
                     {

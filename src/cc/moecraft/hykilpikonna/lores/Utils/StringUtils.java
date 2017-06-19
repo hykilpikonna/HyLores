@@ -57,7 +57,21 @@ public class StringUtils
      */
     public static String removeColorCode(String string)
     {
-        return convertColorCode(string).replace("§", "");
+        //TODO: Fix dis
+        String temp = convertColorCode(string);
+        String output = "";
+        for (int i = 0; i < temp.length(); i++)
+        {
+            if (temp.charAt(i) == '§')
+            {
+                i += 1;
+            }
+            else
+            {
+                output += temp.charAt(i);
+            }
+        }
+        return output;
     }
 
     /**
