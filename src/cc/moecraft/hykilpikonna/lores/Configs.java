@@ -89,7 +89,7 @@ public class Configs
 
         //功能权限
         config.addDefault("Permissions.Lore.Buff.DamageBoost.Require", false);
-        config.addDefault("Permissions.Lore.Buff.DamageBoost.Node", "hylores.lore.buff.defenceboost");
+        config.addDefault("Permissions.Lore.Buff.DamageBoost.Node", "hylores.lore.buff.damageboost");
         config.addDefault("Permissions.Lore.Buff.DefenceBoost.Require", false);
         config.addDefault("Permissions.Lore.Buff.DefenceBoost.Node", "hylores.lore.buff.defenceboost");
 
