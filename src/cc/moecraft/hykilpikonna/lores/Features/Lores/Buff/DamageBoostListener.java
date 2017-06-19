@@ -4,6 +4,7 @@ import cc.moecraft.hykilpikonna.lores.HyLores;
 import me.fromgate.playeffect.VisualEffect;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,6 +17,7 @@ import java.util.Random;
 import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
 import static cc.moecraft.hykilpikonna.lores.Utils.ArrayUtils.getTheRestToString;
+import static cc.moecraft.hykilpikonna.lores.Utils.EventUtils.getEntityDamageByEntityEventPlayerDamager;
 import static cc.moecraft.hykilpikonna.lores.Utils.ItemUtils.getAllItemLores;
 import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.removeSpace;
 import static me.fromgate.playeffect.PlayEffect.play;
@@ -40,17 +42,12 @@ public class DamageBoostListener implements Listener
         loglogger.Debug("[事件监听器][DB]事件被激发.");
         if (HyLores.getInstance().getConfig().getBoolean("Lore.Buffs.DamageBoost.Enable"))
         {
-            if (event.getDamager() instanceof Player)
-            {
-                Player player = (Player) event.getDamager();
-                loglogger.Debug(String.format("[事件监听器][DB]玩家已被存入缓存, 玩家名: %s", player.getName()));
-                //TODO: Permission
-                event.setDamage(getTotalDamage(player, event.getDamage()));
-            }
-            else
-            {
-                loglogger.Debug("[事件监听器][AEL]事件已退出, 攻击者不是玩家");
-            }
+            //获取玩家
+            Player player = getEntityDamageByEntityEventPlayerDamager(event);
+            if (player == null) return;
+
+            //TODO: Permission
+            event.setDamage(getTotalDamage(player, event.getDamage()));
         }
     }
 
@@ -102,6 +99,7 @@ public class DamageBoostListener implements Listener
                 }
             }
         }
+        loglogger.Debug("[获取总伤害Buff] 已获取: " + totalDamage);
         return totalDamage;
     }
 

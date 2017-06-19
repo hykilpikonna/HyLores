@@ -4,6 +4,8 @@ import cc.moecraft.hykilpikonna.lores.HyLores;
 import me.fromgate.playeffect.VisualEffect;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.entity.Arrow;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,6 +16,7 @@ import java.util.Random;
 
 import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
+import static cc.moecraft.hykilpikonna.lores.Utils.EventUtils.getEntityDamageByEntityEventPlayerDamager;
 import static me.fromgate.playeffect.PlayEffect.play;
 
 /**
@@ -36,12 +39,14 @@ public class AttackEffectListener implements Listener
         loglogger.Debug("[事件监听器][AEL]事件被激发.");
         if (HyLores.getInstance().getConfig().getBoolean("Features.AttackEffect.Enable"))
         {
-            if (event.getDamager() instanceof Player)
+            if (event.getEntity() instanceof LivingEntity)
             {
+                //获取玩家
+                Player player = getEntityDamageByEntityEventPlayerDamager(event);
+                if (player == null) return;
+
                 if (Math.round(event.getDamage()) > 0)
                 {
-                    Player player = (Player) event.getDamager();
-                    loglogger.Debug(String.format("[事件监听器][AEL]玩家已被存入缓存, 玩家名: %s", player.getName()));
                     Location location = event.getEntity().getLocation();
                     int amount = (int) Math.round(event.getDamage());
                     if (amount <= getInstance().getConfig().getInt("Features.AttackEffect.Amount.Maximum"))
@@ -90,10 +95,6 @@ public class AttackEffectListener implements Listener
                         loglogger.Debug("[事件监听器][AEL]事件已退出, 心心数量大于最大");
                     }
                 }
-            }
-            else
-            {
-                loglogger.Debug("[事件监听器][AEL]事件已退出, 攻击者不是玩家");
             }
         }
     }
