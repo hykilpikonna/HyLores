@@ -17,6 +17,7 @@ import java.util.Random;
 
 import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
+import static cc.moecraft.hykilpikonna.lores.Permission.hasPermission;
 import static cc.moecraft.hykilpikonna.lores.Utils.ArrayUtils.getTheRestToString;
 import static cc.moecraft.hykilpikonna.lores.Utils.EventUtils.getEntityDamageByEntityEventPlayerDamager;
 import static cc.moecraft.hykilpikonna.lores.Utils.ItemUtils.getAllItemLores;
@@ -46,9 +47,11 @@ public class DamageBoostListener implements Listener
         {
             //获取玩家
             Player player = getEntityDamageByEntityEventPlayerDamager(event);
+            //检测玩家
             if (player == null) return;
-
-            //TODO: Permission
+            //检测权限
+            if (!hasPermission(player, "Lore.Buff.DamageBoost")) return;
+            //设置伤害
             event.setDamage(getTotalDamage(player, event.getDamage()));
         }
     }

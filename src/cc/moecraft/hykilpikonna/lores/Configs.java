@@ -87,6 +87,10 @@ public class Configs
         config.addDefault("Permissions.Command.lore.insert.Require", true);
         config.addDefault("Permissions.Command.lore.insert.Node", "hylores.command.lore.insert");
 
+        //功能权限
+        config.addDefault("Permissions.Lore.Buff.DamageBoost.Require", false);
+        config.addDefault("Permissions.Lore.Buff.DamageBoost.Node", "hylores.lore.buff.damageboost");
+
         //消息发送
         config.addDefault("Messaging.Prefix", convertColorCode("&7&l[&6&lHy&3&lLores&7&l] &r"));
 
