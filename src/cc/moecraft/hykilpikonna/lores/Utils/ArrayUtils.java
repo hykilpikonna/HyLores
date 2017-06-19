@@ -103,7 +103,7 @@ public class ArrayUtils
             String tempString = removeSpace(removeColorCode(lore.get(i)));
             if (tempString.contains(prefix))
             {
-                list.add(tempString.replaceFirst(prefix, ""));
+                list.add(tempString.replace(prefix, ""));
                 loglogger.Debug(String.format("[Lore]行数:%s, 值:%s", i, list.get(i)));
             }
             else
@@ -112,5 +112,19 @@ public class ArrayUtils
             }
         }
         return list;
+    }
+
+    public static ArrayList<String> removeFirst(ArrayList<String> original, String toRemove)
+    {
+        //ArrayList<String> output = new ArrayList<>();
+        for (int i = 0; i < original.size(); i++)
+        {
+            if (original.get(i).equals(toRemove))
+            {
+                original.remove(i);
+                return original;
+            }
+        }
+        return original;
     }
 }

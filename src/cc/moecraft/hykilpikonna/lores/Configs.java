@@ -116,6 +116,12 @@ public class Configs
         config.addDefault("Lore.Buffs.DamageBoost.Override", false);
         config.addDefault("Lore.Buffs.DamageBoost.KeyWord", "攻击力");
 
+        /*其他
+        config.addDefault("Misc.MathSymbol.Addition", "+");
+        config.addDefault("Misc.MathSymbol.Subtraction", "-");
+        config.addDefault("Misc.MathSymbol.Multiplication", "x");
+        config.addDefault("Misc.MathSymbol.Division", "/");*/
+
         //保存配置
         getInstance().saveConfig();
     }

@@ -7,6 +7,7 @@ import org.bukkit.Location;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.inventivetalent.particle.ParticleEffect;
@@ -37,7 +38,7 @@ public class DamageBoostListener implements Listener
         Bukkit.getPluginManager().registerEvents(this, Bukkit.getPluginManager().getPlugin("HyLores"));
     }
 
-    @EventHandler
+    @EventHandler (priority = EventPriority.LOWEST)
     public void onEvent(EntityDamageByEntityEvent event)
     {
         loglogger.Debug("[事件监听器][DB]事件被激发.");
@@ -51,6 +52,7 @@ public class DamageBoostListener implements Listener
             event.setDamage(getTotalDamage(player, event.getDamage()));
         }
     }
+
 
     public double getTotalDamage(Player player, double inputDamage)
     {
@@ -84,7 +86,7 @@ public class DamageBoostListener implements Listener
                                 case '-':
                                     totalDamage -= Double.parseDouble(getTheRestToString(one, 1));
                                     break;
-                                case '*':
+                                case 'x':
                                     totalDamage *= Double.parseDouble(getTheRestToString(one, 1));
                                     break;
                                 case '/':
