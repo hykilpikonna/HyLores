@@ -41,7 +41,8 @@ public class DamageBoostListener implements Listener
             //检测权限
             if (!hasPermission(player, "Lore.Buff.DamageBoost")) return;
             //设置伤害
-            event.setDamage(Misc.calculateTotal(player, event.getFinalDamage(), getInstance().getConfig().getString("Lore.Buffs.DamageBoost.KeyWord"), false));
+            loglogger.Debug(String.format("Damage = %s,  Final Damage = %s", event.getDamage(), event.getFinalDamage()));
+            event.setDamage(Misc.calculateTotal(player, event.getDamage(), getInstance().getConfig().getString("Lore.Buffs.DamageBoost.KeyWord"), false));
         }
     }
 }

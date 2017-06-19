@@ -1,6 +1,7 @@
 package cc.moecraft.hykilpikonna.lores;
 
 import cc.moecraft.hykilpikonna.lores.Features.Lores.Buff.DamageBoostListener;
+import cc.moecraft.hykilpikonna.lores.Features.Lores.Buff.DefenceBoostListener;
 import cc.moecraft.hykilpikonna.lores.Features.Lores.Effects.AttackEffectListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -21,6 +22,7 @@ public class Setup
     //加载监听器
     public static final AttackEffectListener ATTACK_EFFECT_LISTENER = new AttackEffectListener();
     public static final DamageBoostListener DAMAGE_BOOST_LISTENER = new DamageBoostListener();
+    public static final DefenceBoostListener DEFENCE_BOOST_LISTENER = new DefenceBoostListener();
 
 
     public static void setup()
