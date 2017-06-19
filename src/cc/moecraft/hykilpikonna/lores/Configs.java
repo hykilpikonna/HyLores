@@ -89,7 +89,9 @@ public class Configs
 
         //功能权限
         config.addDefault("Permissions.Lore.Buff.DamageBoost.Require", false);
-        config.addDefault("Permissions.Lore.Buff.DamageBoost.Node", "hylores.lore.buff.damageboost");
+        config.addDefault("Permissions.Lore.Buff.DamageBoost.Node", "hylores.lore.buff.defenceboost");
+        config.addDefault("Permissions.Lore.Buff.DefenceBoost.Require", false);
+        config.addDefault("Permissions.Lore.Buff.DefenceBoost.Node", "hylores.lore.buff.defenceboost");
 
         //消息发送
         config.addDefault("Messaging.Prefix", convertColorCode("&7&l[&6&lHy&3&lLores&7&l] &r"));
@@ -116,9 +118,11 @@ public class Configs
         //Lore
         config.addDefault("Lore.Prefix", ChatColor.GRAY + "*");
         config.addDefault("Lore.Buffs.DamageBoost.Enable", true);
-        config.addDefault("Lore.Buffs.DamageBoost.Multiplier", 1);
         config.addDefault("Lore.Buffs.DamageBoost.Override", false);
         config.addDefault("Lore.Buffs.DamageBoost.KeyWord", "攻击力");
+        config.addDefault("Lore.Buffs.DefenceBoost.Enable", true);
+        config.addDefault("Lore.Buffs.DefenceBoost.Override", false);
+        config.addDefault("Lore.Buffs.DefenceBoost.KeyWord", "防御力");
 
         /*其他
         config.addDefault("Misc.MathSymbol.Addition", "+");

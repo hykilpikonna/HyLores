@@ -14,34 +14,33 @@ import static cc.moecraft.hykilpikonna.lores.Permission.hasPermission;
 import static cc.moecraft.hykilpikonna.lores.Utils.EventUtils.getEntityDamageByEntityEventPlayerDamager;
 
 /**
- * 此类由 Hykilpikonna 在 2017/06/15 创建!
- * Created by Hykilpikonna on 2017/06/15!
+ * 此类由 Hykilpikonna 在 2017/06/19 创建!
+ * Created by Hykilpikonna on 2017/06/19!
  * Twitter: @Hykilpikonna
  * QQ/Wechat: 871674895
  */
-public class DamageBoostListener implements Listener
+public class DefenceBoostListener implements Listener
 {
-    public DamageBoostListener()
+    public DefenceBoostListener()
     {
-        loglogger.Debug("[事件监听器][注册]DamageBoost已经注册监听");
+        loglogger.Debug("[事件监听器][注册]DefenceBoost已经注册监听");
         Bukkit.getPluginManager().registerEvents(this, Bukkit.getPluginManager().getPlugin("HyLores"));
     }
 
-    @EventHandler (priority = EventPriority.LOWEST)
+    @EventHandler(priority = EventPriority.LOWEST)
     public void onEvent(EntityDamageByEntityEvent event)
     {
-        //伤害加成
+        //防御加成
         loglogger.Debug("[事件监听器][DB]事件被激发.");
         if (HyLores.getInstance().getConfig().getBoolean("Lore.Buffs.DefenceBoost.Enable"))
         {
+            if (!(event.getEntity() instanceof Player)) return;
             //获取玩家
-            Player player = getEntityDamageByEntityEventPlayerDamager(event);
-            //检测玩家
-            if (player == null) return;
+            Player player = (Player) event.getEntity();
             //检测权限
-            if (!hasPermission(player, "Lore.Buff.DamageBoost")) return;
+            if (!hasPermission(player, "Lore.Buff.DefenceBoost")) return;
             //设置伤害
-            event.setDamage(Misc.calculateTotal(player, event.getFinalDamage(), getInstance().getConfig().getString("Lore.Buffs.DamageBoost.KeyWord"), false));
+            event.setDamage(Misc.calculateTotal(player, event.getFinalDamage(), getInstance().getConfig().getString("Lore.Buffs.DefenceBoost.KeyWord"), true));
         }
     }
 }
