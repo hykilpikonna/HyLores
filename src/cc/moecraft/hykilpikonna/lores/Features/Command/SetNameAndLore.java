@@ -87,7 +87,10 @@ public class SetNameAndLore
             itemMeta.setLore(new ArrayList<String>());
             return itemMeta;
         }
-        tempAL.remove(index);
+        if (tempAL.size() > index)
+        {
+            tempAL.remove(index);
+        }
 
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setLore(tempAL);
