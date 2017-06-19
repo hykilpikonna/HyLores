@@ -103,7 +103,7 @@ public class ArrayUtils
             String tempString = removeSpace(removeColorCode(lore.get(i)));
             if (tempString.contains(prefix))
             {
-                list.add(tempString.replace(prefix, ""));
+                list.add(tempString.replaceFirst(prefix, ""));
                 loglogger.Debug(String.format("[Lore]行数:%s, 值:%s", i, list.get(i)));
             }
             else

@@ -85,7 +85,7 @@ public class StringUtils
         ArrayList<String> output = new ArrayList<>();
         for (int i = 0; i < reg.size(); i++)
         {
-            output.add(convertColorCode(reg.get(i)).replace("§", ""));
+            output.add(removeColorCode(reg.get(i)));
         }
         return output;
     }
@@ -97,10 +97,11 @@ public class StringUtils
      */
     public static ArrayList<String> removeColorCode(List<String> reg)
     {
+        //这里有可能出错
         ArrayList<String> output = new ArrayList<>();
         for (int i = 0; i < reg.size(); i++)
         {
-            output.add(convertColorCode(reg.get(i)).replace("§", ""));
+            output.add(removeColorCode(reg.get(i)));
         }
         return output;
     }
