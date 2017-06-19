@@ -7,19 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10f1cc0b-c60f-4408-81fa-94c9b3c6ca06" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HyLores/cc/moecraft/hykilpikonna/lores/Utils/LoreUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/LoreUtils.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HyLores/cc/moecraft/hykilpikonna/lores/Features/Command/SetNameAndLore.class" afterPath="$PROJECT_DIR$/out/production/HyLores/cc/moecraft/hykilpikonna/lores/Features/Command/SetNameAndLore.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HyLores/cc/moecraft/hykilpikonna/lores/Features/Lores/Effects/AttackEffectListener.class" afterPath="$PROJECT_DIR$/out/production/HyLores/cc/moecraft/hykilpikonna/lores/Features/Lores/Effects/AttackEffectListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HyLores/cc/moecraft/hykilpikonna/lores/Utils/ArrayUtils.class" afterPath="$PROJECT_DIR$/out/production/HyLores/cc/moecraft/hykilpikonna/lores/Utils/ArrayUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HyLores/cc/moecraft/hykilpikonna/lores/Utils/ItemUtils.class" afterPath="$PROJECT_DIR$/out/production/HyLores/cc/moecraft/hykilpikonna/lores/Utils/ItemUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Help.yml" afterPath="$PROJECT_DIR$/Help.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HyLores/plugin.yml" afterPath="$PROJECT_DIR$/out/production/HyLores/plugin.yml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/HyLores/HyLores.jar" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Command/SetNameAndLore.java" afterPath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Command/SetNameAndLore.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Lores/Effects/AttackEffectListener.java" afterPath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Lores/Effects/AttackEffectListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/ArrayUtils.java" afterPath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/ArrayUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/ItemUtils.java" afterPath="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/ItemUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugin.yml" afterPath="$PROJECT_DIR$/src/plugin.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,16 +25,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Configs.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Configs.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1938">
-              <caret line="112" column="58" lean-forward="false" selection-start-line="112" selection-start-column="58" selection-end-line="112" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="HyLores.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/HyLores.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -126,6 +105,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="SetNameAndLore.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Command/SetNameAndLore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="667">
+              <caret line="148" column="49" lean-forward="false" selection-start-line="148" selection-start-column="49" selection-end-line="148" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3909#3910#0" expanded="true" />
+                <element signature="e#3965#3966#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="StringUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/StringUtils.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -141,7 +134,7 @@
       <file leaf-file-name="ArrayUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/ArrayUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
+            <state relative-caret-position="-321">
               <caret line="43" column="32" lean-forward="false" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -209,11 +202,11 @@
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Configs.java" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/EventUtils.java" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Lores/Buff/DamageBoostListener.java" />
-        <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Command/SetNameAndLore.java" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Lores/Effects/AttackEffectListener.java" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/LoreUtils.java" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/ItemUtils.java" />
         <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/ArrayUtils.java" />
+        <option value="$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Command/SetNameAndLore.java" />
         <option value="$PROJECT_DIR$/src/plugin.yml" />
       </list>
     </option>
@@ -1117,16 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Command/SetNameAndLore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1197">
-          <caret line="63" column="42" lean-forward="false" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Lores/Buff/DamageBoostListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="610">
@@ -1147,29 +1130,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Lores/Effects/AttackEffectListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="80" column="29" lean-forward="true" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/LoreUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/StringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2318">
-          <caret line="131" column="15" lean-forward="false" selection-start-line="131" selection-start-column="15" selection-end-line="131" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1185,10 +1150,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/ArrayUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
+        <state relative-caret-position="-321">
           <caret line="43" column="32" lean-forward="false" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Utils/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2318">
+          <caret line="131" column="15" lean-forward="false" selection-start-line="131" selection-start-column="15" selection-end-line="131" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Lores/Effects/AttackEffectListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="80" column="29" lean-forward="true" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc/moecraft/hykilpikonna/lores/Features/Command/SetNameAndLore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="148" column="49" lean-forward="false" selection-start-line="148" selection-start-column="49" selection-end-line="148" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3909#3910#0" expanded="true" />
+            <element signature="e#3965#3966#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -146,7 +146,6 @@ public class SetNameAndLore
     
     private static String replaceVariables(String original)
     {
-        original.replace("%pre%", prefix);
-        return original;
+        return original.replace("%pre%", prefix);
     }
 }
