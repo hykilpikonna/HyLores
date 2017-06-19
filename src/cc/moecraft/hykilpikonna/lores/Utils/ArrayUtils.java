@@ -41,7 +41,7 @@ public class ArrayUtils
         String output = "";
         for (int i = index; i < strings.length; i++)
         {
-            output += strings[i];
+            output += strings[i] + " ";
         }
         loglogger.Debug("[工具处理]其余的字符串是: " + output);
         return output;
