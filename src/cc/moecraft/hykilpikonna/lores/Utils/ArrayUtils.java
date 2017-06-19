@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
 import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.removeColorCode;
+import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.removeSpace;
 
 /**
  * 此类由 Hykilpikonna 在 2017/06/15 创建!
@@ -96,10 +97,10 @@ public class ArrayUtils
 
         loglogger.Debug("[Lore]正在把Lore转换为技能列表");
         ArrayList<String> list = new ArrayList<>();
-        String prefix = removeColorCode(getInstance().getConfig().getString("Lore.Prefix"));
+        String prefix = removeSpace(removeColorCode(getInstance().getConfig().getString("Lore.Prefix")));
         for (int i = 0; i < lore.size(); i++)
         {
-            String tempString = removeColorCode(lore.get(i));
+            String tempString = removeSpace(removeColorCode(lore.get(i)));
             if (tempString.contains(prefix))
             {
                 list.add(tempString.replace(prefix, ""));

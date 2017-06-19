@@ -135,4 +135,19 @@ public class StringUtils
     {
         return string.replace(" ", "");
     }
+
+    /**
+     * 去除一个字符串中的空格
+     * @param string 字符串
+     * @return 空格
+     */
+    public static ArrayList<String> removeSpace(ArrayList<String> string)
+    {
+        ArrayList<String> output = new ArrayList<>();
+        for (int i = 0; i < string.size(); i++)
+        {
+            output.add(removeSpace(string.get(i)));
+        }
+        return output;
+    }
 }

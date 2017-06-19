@@ -9,6 +9,8 @@ import java.util.List;
 
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
 import static cc.moecraft.hykilpikonna.lores.Utils.ArrayUtils.readLore;
+import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.removeColorCode;
+import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.removeSpace;
 import static cc.moecraft.hykilpikonna.lores.Utils.VersionUtils.getAllVersionItemInHand;
 
 /**
@@ -91,6 +93,11 @@ public class ItemUtils
         catch (NullPointerException e)
         {
             loglogger.Debug("[获取物品]未检测到手上物品, 已无视");
+        }
+
+        for (int i = 0; i < output.size(); i++)
+        {
+            output.set(i, removeSpace(removeColorCode(output.get(i))));
         }
 
         return output;
