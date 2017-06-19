@@ -61,7 +61,7 @@ public class SetNameAndLore
         {
             tempAL = new ArrayList<>();
         }
-        tempAL.add(prefix + lore);
+        tempAL.add(replaceVariables(lore));
 
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setLore(tempAL);
@@ -112,7 +112,7 @@ public class SetNameAndLore
         {
             tempAL = new ArrayList<>();
         }
-        tempAL.set(index, prefix + lore);
+        tempAL.set(index, replaceVariables(lore));
 
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setLore(tempAL);
@@ -137,10 +137,16 @@ public class SetNameAndLore
         {
             tempAL = new ArrayList<>();
         }
-        tempAL.add(index, prefix + lore);
+        tempAL.add(index, replaceVariables(lore));
 
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setLore(tempAL);
         return itemMeta;
+    }
+    
+    private static String replaceVariables(String original)
+    {
+        original.replace("%pre%", prefix);
+        return original;
     }
 }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
-import static cc.moecraft.hykilpikonna.lores.Utils.LoreUtils.readLore;
+import static cc.moecraft.hykilpikonna.lores.Utils.ArrayUtils.readLore;
 import static cc.moecraft.hykilpikonna.lores.Utils.VersionUtils.getAllVersionItemInHand;
 
 /**

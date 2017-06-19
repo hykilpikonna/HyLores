@@ -36,7 +36,6 @@ public class AttackEffectListener implements Listener
     @EventHandler
     public void onEvent(EntityDamageByEntityEvent event)
     {
-        loglogger.Debug("[事件监听器][AEL]事件被激发.");
         if (HyLores.getInstance().getConfig().getBoolean("Features.AttackEffect.Enable"))
         {
             if (event.getEntity() instanceof LivingEntity)
@@ -59,16 +58,13 @@ public class AttackEffectListener implements Listener
                                 double xCenter = location.getX() + getInstance().getConfig().getInt("Features.AttackEffect.Centering.OffsetX");
                                 double yCenter = location.getY() + getInstance().getConfig().getInt("Features.AttackEffect.Centering.OffsetY");
                                 double zCenter = location.getZ() + getInstance().getConfig().getInt("Features.AttackEffect.Centering.OffsetZ");
-                                loglogger.Debug(String.format("[事件监听器][AEL]已获取坐标中心, [%s,%s,%s]", xCenter, yCenter, zCenter));
                                 Random random = new Random();
                                 double xRandom = ((double) random.nextInt(getInstance().getConfig().getInt("Features.AttackEffect.Randomizing.X.Range")) + getInstance().getConfig().getInt("Features.AttackEffect.Randomizing.X.Add")) / getInstance().getConfig().getInt("Features.AttackEffect.Randomizing.X.Divide");
                                 double yRandom = ((double) random.nextInt(getInstance().getConfig().getInt("Features.AttackEffect.Randomizing.Y.Range")) + getInstance().getConfig().getInt("Features.AttackEffect.Randomizing.Y.Add")) / getInstance().getConfig().getInt("Features.AttackEffect.Randomizing.Y.Divide");
                                 double zRandom = ((double) random.nextInt(getInstance().getConfig().getInt("Features.AttackEffect.Randomizing.Z.Range")) + getInstance().getConfig().getInt("Features.AttackEffect.Randomizing.Z.Add")) / getInstance().getConfig().getInt("Features.AttackEffect.Randomizing.Z.Divide");
-                                loglogger.Debug(String.format("[事件监听器][AEL]随机已生成, [%s,%s,%s]", xRandom, yRandom, zRandom));
                                 xCenter = xCenter + xRandom;
                                 yCenter = yCenter + yRandom;
                                 zCenter = zCenter + zRandom;
-                                loglogger.Debug(String.format("[事件监听器][AEL]随机坐标已保存, [%s,%s,%s]", xCenter, yCenter, zCenter));
                                 if (getInstance().getConfig().getBoolean("API.UsePlayEffectAPIInsteadOfParticleLib"))
                                 {
                                     Location tempL = event.getEntity().getLocation();
@@ -76,7 +72,6 @@ public class AttackEffectListener implements Listener
                                     tempL.setY(yCenter);
                                     tempL.setZ(zCenter);
                                     play(VisualEffect.HEART, tempL, "num:1");
-                                    loglogger.Debug("[事件监听器][AEL]已通过PlayEffectAPI发送");
                                 }
                                 else
                                 {
