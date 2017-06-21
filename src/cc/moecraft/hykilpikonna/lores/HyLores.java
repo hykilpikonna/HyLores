@@ -10,6 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import static cc.moecraft.hykilpikonna.lores.Features.Command.GetHead.commandGetHead;
 import static cc.moecraft.hykilpikonna.lores.Features.Command.SetNameAndLore.*;
 import static cc.moecraft.hykilpikonna.lores.Messaging.sendHelpMessage;
 import static cc.moecraft.hykilpikonna.lores.Messaging.sendMessage;
@@ -21,6 +22,7 @@ import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.convertColorCode;
 import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.isNumeric;
 import static cc.moecraft.hykilpikonna.lores.Utils.VersionUtils.getAllVersionItemInHand;
 import static cc.moecraft.hykilpikonna.lores.Utils.VersionUtils.setAllVersionItemInHand;
+import static org.bukkit.ChatColor.RED;
 
 /**
  * 此类由 Hykilpikonna 在 2017/06/10 创建!
@@ -184,6 +186,16 @@ public class HyLores extends JavaPlugin implements Listener
                                 break;
                         }
                         break;
+                    case "gethead":
+                        if (getConfig().getBoolean("Features.GetHead.Enable"))
+                        {
+                            commandGetHead(player, args);
+                        }
+                        else
+                        {
+                            sendMessage(player, String.format("%s头颅功能未启用", RED));
+                        }
+                        break;
                     default:
                         sendHelpMessage(player);
                         break;
@@ -192,6 +204,7 @@ public class HyLores extends JavaPlugin implements Listener
             else
             {
                 loglogger.Debug("[指令]发送者不是玩家");
+                loglogger.log("后台指令暂时未支持");
                 //TODO: 不是玩家的情况
             }
             return true;

@@ -42,9 +42,9 @@ public class ArrayUtils
         String output = "";
         for (int i = index; i < strings.length; i++)
         {
-            output += strings[i] + " ";
+            output += (i == strings.length - 1) ? strings[i] : strings[i] + " ";
         }
-        loglogger.Debug("[工具处理]其余的字符串是: " + output);
+        loglogger.Debug("[工具处理]其余的字符串是: " + output + ";");
         return output;
     }
 

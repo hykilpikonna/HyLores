@@ -40,10 +40,6 @@ public class AttackEffectListener implements Listener
         {
             if (event.getEntity() instanceof LivingEntity)
             {
-                //获取玩家
-                Player player = getEntityDamageByEntityEventPlayerDamager(event);
-                if (player == null) return;
-
                 if (Math.round(event.getDamage()) > 0)
                 {
                     Location location = event.getEntity().getLocation();

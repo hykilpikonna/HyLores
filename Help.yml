@@ -8,6 +8,7 @@
 #Lore删掉一行:   /hyl lore remove <行数>
 #Lore设置一行:   /hyl lore set <行数> <Lore>
 #Lore插入一行:   /hyl lore insert <行数> <Lore>
+#获得玩家头颅:   /hyl gethead <数量> <玩家名>
 #                                                    #
 ######################################################
 

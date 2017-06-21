@@ -86,6 +86,8 @@ public class Configs
         config.addDefault("Permissions.Command.lore.set.Node", "hylores.command.lore.set");
         config.addDefault("Permissions.Command.lore.insert.Require", true);
         config.addDefault("Permissions.Command.lore.insert.Node", "hylores.command.lore.insert");
+        config.addDefault("Permissions.Command.head.get.Require", true);
+        config.addDefault("Permissions.Command.head.get.Node", "hylores.command.head.get");
 
         //功能权限
         config.addDefault("Permissions.Lore.Buff.DamageBoost.Require", false);
@@ -114,6 +116,11 @@ public class Configs
         config.addDefault("Features.AttackEffect.Randomizing.Z.Add", -50);
         config.addDefault("Features.AttackEffect.Randomizing.Z.Divide", 100);
         config.addDefault("Features.AttackEffect.VisibleRange", 100);
+
+        //头颅获取
+        config.addDefault("Features.GetHead.Enable", true);
+        config.addDefault("Features.Item.ChangeDisplayName", false);
+        config.addDefault("Features.Item.DisplayName", "%s的头颅");
 
         //Lore
         config.addDefault("Lore.Prefix", ChatColor.GRAY + "*");
