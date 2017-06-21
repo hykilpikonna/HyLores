@@ -67,8 +67,6 @@ public class HyLores extends JavaPlugin implements Listener
         return instance;
     }
 
-    //TODO: Command
-
     /**
      * 执行指令
      * @param sender 发送指令的人
