@@ -12,12 +12,12 @@ public class StringUtils
 {
     /**
      * 把所有的&替换成§
-     * @param reg 源字符串
+     * @param string 源字符串
      * @return 替换后字符串
      */
-    public static String convertColorCode(String reg)
+    public static String convertColorCode(String string)
     {
-        return reg.replace('&', '§');
+        return string == null || string.length() == 0 ? "" : string.replace('&', '§');
     }
 
     /**
@@ -27,6 +27,7 @@ public class StringUtils
      */
     public static ArrayList<String> convertColorCode(ArrayList<String> reg)
     {
+        if (reg == null || reg.size() == 0) return null;
         ArrayList<String> output = new ArrayList<>();
         for (int i = 0; i < reg.size(); i++)
         {
@@ -42,6 +43,7 @@ public class StringUtils
      */
     public static ArrayList<String> convertColorCode(List<String> reg)
     {
+        if (reg == null || reg.size() == 0) return null;
         ArrayList<String> output = new ArrayList<>();
         for (int i = 0; i < reg.size(); i++)
         {
@@ -57,7 +59,7 @@ public class StringUtils
      */
     public static String removeColorCode(String string)
     {
-        //TODO: Fix dis
+        if (string == null || string.length() == 0) return "";
         String temp = convertColorCode(string);
         String output = "";
         for (int i = 0; i < temp.length(); i++)
@@ -115,6 +117,7 @@ public class StringUtils
      */
     public static boolean isNumeric(String str)
     {
+        if (str == null || str.length() == 0) return false;
         for (int i = 0; i < str.length(); i++)
         {
             if (str.charAt(i) == '_') return false;
@@ -150,7 +153,7 @@ public class StringUtils
      */
     public static String removeSpace(String string)
     {
-        return string.replace(" ", "");
+        return string == null ? "" : string.replace(" ", "");
     }
 
     /**
@@ -160,6 +163,7 @@ public class StringUtils
      */
     public static ArrayList<String> removeSpace(ArrayList<String> string)
     {
+        if (string == null || string.size() == 0) return null;
         ArrayList<String> output = new ArrayList<>();
         for (int i = 0; i < string.size(); i++)
         {
