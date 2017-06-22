@@ -59,7 +59,7 @@ public class Configs
         config.set("ConfigVersion", Bukkit.getPluginManager().getPlugin("HyLores").getDescription().getVersion());
 
         //API版本
-        config.addDefault("API.UsePlayEffectAPIInsteadOfParticleLib", Bukkit.getVersion().contains("1.7"));
+        config.addDefault("API.UsePlayEffectAPIInsteadOfParticleLib", true);
         loglogger.Debug(String.format("[加载]当前服务器版本为%s", Bukkit.getVersion()));
 
         //版本

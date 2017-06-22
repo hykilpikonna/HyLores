@@ -81,6 +81,7 @@ public class StringUtils
      */
     public static ArrayList<String> removeColorCode(ArrayList<String> reg)
     {
+        if (reg == null || reg.size() == 0) return null;
         //这里有可能出错
         ArrayList<String> output = new ArrayList<>();
         for (int i = 0; i < reg.size(); i++)
@@ -97,6 +98,7 @@ public class StringUtils
      */
     public static ArrayList<String> removeColorCode(List<String> reg)
     {
+        if (reg == null || reg.size() == 0) return null;
         //这里有可能出错
         ArrayList<String> output = new ArrayList<>();
         for (int i = 0; i < reg.size(); i++)
