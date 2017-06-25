@@ -1,6 +1,7 @@
 package cc.moecraft.hykilpikonna.lores.Features.Lores.Buff;
 
 import cc.moecraft.hykilpikonna.lores.HyLores;
+import cc.moecraft.hykilpikonna.lores.Utils.Misc;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

@@ -2,7 +2,8 @@ package cc.moecraft.hykilpikonna.lores;
 
 import cc.moecraft.hykilpikonna.lores.Features.Lores.Buff.DamageBoostListener;
 import cc.moecraft.hykilpikonna.lores.Features.Lores.Buff.DefenceBoostListener;
-import cc.moecraft.hykilpikonna.lores.Features.Lores.Effects.AttackEffectListener;
+import cc.moecraft.hykilpikonna.lores.Features.Effects.AttackEffectListener;
+import cc.moecraft.hykilpikonna.lores.Features.Lores.Buff.LootingListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
@@ -23,7 +24,7 @@ public class Setup
     public static final AttackEffectListener ATTACK_EFFECT_LISTENER = new AttackEffectListener();
     public static final DamageBoostListener DAMAGE_BOOST_LISTENER = new DamageBoostListener();
     public static final DefenceBoostListener DEFENCE_BOOST_LISTENER = new DefenceBoostListener();
-
+    public static final LootingListener LOOTING_LISTENER = new LootingListener();
 
     public static void setup()
     {

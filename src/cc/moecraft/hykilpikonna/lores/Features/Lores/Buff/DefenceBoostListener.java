@@ -1,6 +1,7 @@
 package cc.moecraft.hykilpikonna.lores.Features.Lores.Buff;
 
 import cc.moecraft.hykilpikonna.lores.HyLores;
+import cc.moecraft.hykilpikonna.lores.Utils.Misc;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -11,7 +12,6 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
 import static cc.moecraft.hykilpikonna.lores.Permission.hasPermission;
-import static cc.moecraft.hykilpikonna.lores.Utils.EventUtils.getEntityDamageByEntityEventPlayerDamager;
 
 /**
  * 此类由 Hykilpikonna 在 2017/06/19 创建!

@@ -94,6 +94,10 @@ public class Configs
         config.addDefault("Permissions.Lore.Buff.DamageBoost.Node", "hylores.lore.buff.damageboost");
         config.addDefault("Permissions.Lore.Buff.DefenceBoost.Require", false);
         config.addDefault("Permissions.Lore.Buff.DefenceBoost.Node", "hylores.lore.buff.defenceboost");
+        config.addDefault("Permissions.Lore.Buff.Looting.Require", false);
+        config.addDefault("Permissions.Lore.Buff.Looting.Node", "hylores.lore.buff.looting");
+        config.addDefault("Permissions.Lore.Buff.Looting.Bypass.Require", true);
+        config.addDefault("Permissions.Lore.Buff.Looting.Bypass.Node", "hylores.lore.buff.looting.bypass");
 
         //消息发送
         config.addDefault("Messaging.Prefix", convertColorCode("&7&l[&6&lHy&3&lLores&7&l] &r"));
@@ -130,6 +134,12 @@ public class Configs
         config.addDefault("Lore.Buffs.DefenceBoost.Enable", true);
         config.addDefault("Lore.Buffs.DefenceBoost.Override", false);
         config.addDefault("Lore.Buffs.DefenceBoost.KeyWord", "防御力");
+        config.addDefault("Lore.Buffs.Looting.Enable", true);
+        config.addDefault("Lore.Buffs.Looting.WithoutLore.Enable", false);
+        config.addDefault("Lore.Buffs.Looting.WithoutLore.DefaultItems", 3);
+        config.addDefault("Lore.Buffs.Looting.KeyWord", "物品抢夺");
+        config.addDefault("Lore.Buffs.AntiLooting.Enable", true);
+        config.addDefault("Lore.Buffs.AntiLooting.KeyWord", "不可抢夺");
 
         /*其他
         config.addDefault("Misc.MathSymbol.Addition", "+");

@@ -36,7 +36,7 @@ public class ItemUtils
      * @param player 玩家
      * @return 他的所有的Lore
      */
-    public static ArrayList<ArrayList<String>> getAllItemLores(Player player)
+    public static ArrayList<ArrayList<String>> getAllArmorLores(Player player)
     {
         ArrayList<ArrayList<String>> output = new ArrayList<>();
 

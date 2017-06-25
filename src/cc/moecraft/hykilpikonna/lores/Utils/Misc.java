@@ -1,12 +1,14 @@
-package cc.moecraft.hykilpikonna.lores.Features.Lores.Buff;
+package cc.moecraft.hykilpikonna.lores.Utils;
 
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 
+import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
 import static cc.moecraft.hykilpikonna.lores.Utils.ArrayUtils.getTheRestToString;
-import static cc.moecraft.hykilpikonna.lores.Utils.ItemUtils.getAllItemLores;
+import static cc.moecraft.hykilpikonna.lores.Utils.ItemUtils.getAllArmorLores;
 import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.removeColorCode;
 import static cc.moecraft.hykilpikonna.lores.Utils.StringUtils.removeSpace;
 
@@ -20,7 +22,7 @@ public class Misc
 {
     public static double calculateTotal(Player player, double inputDamage, String keyWord, boolean opposite)
     {
-        ArrayList<ArrayList<String>> allItemLores = getAllItemLores(player);
+        ArrayList<ArrayList<String>> allItemLores = getAllArmorLores(player);
         double totalDamage = inputDamage + 0.0;
 
         if (allItemLores == null || allItemLores.size() < 1)
@@ -50,7 +52,6 @@ public class Misc
                                 one = one.replace("/", "x");
                                 one = one.replace("=", "/");
                             }
-                            loglogger.Debug("one.charAt(0) == " + one.charAt(0));
                             switch (one.charAt(0))
                             {
                                 case '+':

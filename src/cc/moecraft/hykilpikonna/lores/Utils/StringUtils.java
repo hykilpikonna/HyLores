@@ -163,7 +163,8 @@ public class StringUtils
      */
     public static ArrayList<String> removeSpace(ArrayList<String> string)
     {
-        if (string == null || string.size() == 0) return null;
+        if (string == null || string.size() == 0) return new ArrayList<>();
+
         ArrayList<String> output = new ArrayList<>();
         for (int i = 0; i < string.size(); i++)
         {

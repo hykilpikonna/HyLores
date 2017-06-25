@@ -1,12 +1,15 @@
 package cc.moecraft.hykilpikonna.lores.Features.Command;
 
 import org.bukkit.entity.Item;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 
 import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
+import static cc.moecraft.hykilpikonna.lores.Messaging.sendMessage;
+import static org.bukkit.ChatColor.RED;
 
 /**
  * 此类由 Hykilpikonna 在 2017/06/15 创建!
@@ -56,6 +59,13 @@ public class SetNameAndLore
         if ((ArrayList<String>) itemStack.getItemMeta().getLore() != null)
         {
             tempAL = (ArrayList<String>) itemStack.getItemMeta().getLore();
+            for (String aTempAL : tempAL)
+            {
+                if (aTempAL.equals(lore))
+                {
+                    return null;
+                }
+            }
         }
         else
         {

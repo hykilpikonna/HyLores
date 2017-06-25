@@ -1,12 +1,10 @@
-package cc.moecraft.hykilpikonna.lores.Features.Lores.Effects;
+package cc.moecraft.hykilpikonna.lores.Features.Effects;
 
 import cc.moecraft.hykilpikonna.lores.HyLores;
 import me.fromgate.playeffect.VisualEffect;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.entity.Arrow;
 import org.bukkit.entity.LivingEntity;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
@@ -16,7 +14,6 @@ import java.util.Random;
 
 import static cc.moecraft.hykilpikonna.lores.HyLores.getInstance;
 import static cc.moecraft.hykilpikonna.lores.HyLores.loglogger;
-import static cc.moecraft.hykilpikonna.lores.Utils.EventUtils.getEntityDamageByEntityEventPlayerDamager;
 import static me.fromgate.playeffect.PlayEffect.play;
 
 /**

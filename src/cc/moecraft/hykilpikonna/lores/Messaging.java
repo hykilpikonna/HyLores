@@ -48,8 +48,8 @@ public class Messaging
      */
     public static void sendNoPermissionMessage(Player player, String permission)
     {
-        player.sendMessage(getInstance().getConfig().getString("Messaging.Prefix") + RED + "您没有权限接收次消息!");
-        player.sendMessage(getInstance().getConfig().getString("Messaging.Prefix") + RED + String.format("缺少的权限: %s", permission));
+        sendMessageDirect(player, RED + "您没有权限!");
+        sendMessageDirect(player, RED + String.format("缺少的权限: %s", permission));
     }
 
     /**

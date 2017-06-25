@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import static cc.moecraft.hykilpikonna.lores.Features.Command.GetHead.commandGetHead;
@@ -140,7 +141,13 @@ public class HyLores extends JavaPlugin implements Listener
                                 {
                                     ItemStack itemInHand = getAllVersionItemInHand(player);
                                     String lore = convertColorCode(getTheRestToString(args, 2));
-                                    setAllVersionItemInHand(player, addLore(itemInHand, lore));
+                                    ItemMeta itemMeta = addLore(itemInHand, lore);
+                                    if (itemMeta == null)
+                                    {
+                                        sendMessage(player, RED + "请勿重复操作");
+                                        return false;
+                                    }
+                                    setAllVersionItemInHand(player, itemMeta);
                                     sendMessage(player, ChatColor.GREEN + String.format("已在主手物品Lore内添加%s", lore));
                                 }
                                 break;
